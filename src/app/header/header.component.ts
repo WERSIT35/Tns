@@ -23,7 +23,6 @@ export class HeaderComponent{
   ngOnInit(): void {
     this.translateService.currentLanguage$.subscribe(language => {
       this.isGeorgian = language === 'ka';
-      console.log(`Current language is ${language}, isGeorgian: ${this.isGeorgian}`);
     });
   }
 

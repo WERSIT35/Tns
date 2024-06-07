@@ -113,7 +113,7 @@ header {
             &:hover {
               font-weight: bold;
               color: var(--base-color);
-              background-color: var(--top-color);
+              background-color: var(--top-fade);
             }
 
             &.active-link {
