@@ -1,6 +1,8 @@
 // @tailwind base;
 // @tailwind components;
 // @tailwind utilities;
+@import url('@splidejs/splide/css');
+
 :root{
     --top-color:#e0582e;
     --top-fade:#f3c9bc;

@@ -4,7 +4,6 @@ import { HomeService } from '../home.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateService } from '../translate.service';
-import '@splidejs/splide/css';
 import { Popular } from '../popular';
 import { ProductsComponent } from "../products/products.component";
 import { PopSliderComponent } from "../pop-slider/pop-slider.component";

@@ -5,7 +5,6 @@ import { Home, Item } from '../home/home';
 import { Popular } from '../popular';
 import { HomeService } from '../home.service';
 import { TranslateService } from '../translate.service';
-import Splide from '@splidejs/splide';
 
 @Component({
   selector: 'app-products',
@@ -34,17 +33,6 @@ export class ProductsComponent {
 
   ngOnInit(): void {
     this.loadCategories(); 
-  }
-  ngAfterViewInit(): void {
-    const splide = new Splide('.splide',{
-      type   : 'loop',
-      perPage: 3,
-      focus  : 'center',
-      pauseOnHover:false,
-      autoplay:true,
-    });
-
-  splide.mount();
   }
 
   loadCategories(): void {
