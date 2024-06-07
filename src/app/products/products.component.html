@@ -1,0 +1,29 @@
+<main>
+    <section>
+        <ul>
+          <ng-container
+            *ngFor="let category of categoriesList[0].categorys; let i = index"
+          >
+            <li
+              (click)="categoryChange(i)"
+              [class.selected]="selectedCategoryIndex === i"
+            >
+              {{ category }}
+            </li>
+          </ng-container>
+        </ul>
+      </section>
+      <div class="seccontainer" *ngIf="selectedItems.length > 0">
+        <ul class="grid-container">
+          <li *ngFor="let item of selectedItems" class="grid-item">
+            <a [routerLink]="['/product-dt', item.id]">
+              <img [src]="item.image" [alt]="item.name" />
+              <div class="txt">
+                <h4>{{ item.name }}</h4>
+                <p>ფასი: {{ item.price }}.00₾</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+</main>

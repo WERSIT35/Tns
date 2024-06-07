@@ -1,0 +1,15 @@
+<section>
+  <div class="partout" *ngIf="teni">
+    <img [src]="teni.image" alt="{{ teni.name }}" />
+    <div class="part2">
+      <h1>{{ teni.name }}</h1>
+      <p>{{ teni.description }}</p>
+      <p>კატეგორია: {{ teni.category }}</p>
+      <p>კოდი: {{ teni.code }}</p>
+      <p class="price">ფასი: {{ teni.price }}.00₾</p>
+    </div>
+  </div>
+</section>
+<div *ngIf="!teni">
+  <p>Item not found.</p>
+</div>

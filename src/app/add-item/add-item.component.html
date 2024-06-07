@@ -1,0 +1,111 @@
+<div class="forform">
+  <form (ngSubmit)="onSubmit()" #itemForm="ngForm">
+    <div>
+      <label for="category">{{ isGeorgian ? 'კატეგორია' : 'Category' }}:</label>
+      <select
+        id="category"
+        [(ngModel)]="newItem.category"
+        name="category"
+        required
+      >
+        <option value="" disabled selected>{{ isGeorgian ? 'აირჩიე კატეგორია' : 'Select Category' }}</option>
+        <ng-container *ngFor="let category of categoriesList[0]?.categorys; let i = index">
+          <option [value]="i">{{ category }}</option>
+        </ng-container>
+      </select>
+    </div>
+    <div>
+      <label for="name">{{ isGeorgian ? 'დასახელება' : 'Name' }}:</label>
+      <input
+        type="text"
+        id="name"
+        [(ngModel)]="newItem.name"
+        name="name"
+        required
+        [placeholder]="isGeorgian ? 'შეიყვანე დასახელება' : 'Enter Name'"
+      />
+    </div>
+    <div>
+      <label for="price">{{ isGeorgian ? 'ფასი' : 'Price' }}:</label>
+      <input
+        type="number"
+        id="price"
+        [(ngModel)]="newItem.price"
+        name="price"
+        required
+        [placeholder]="isGeorgian ? 'შეიყვანე ფასი' : 'Enter Price'"
+      />
+    </div>
+    <div>
+      <label for="description">{{ isGeorgian ? 'აღწერა' : 'Description' }}:</label>
+      <textarea
+        id="description"
+        [(ngModel)]="newItem.description"
+        name="description"
+        required
+        [placeholder]="isGeorgian ? 'შეიყვანე აღწერა' : 'Enter Description'"
+      ></textarea>
+    </div>
+    <div>
+      <label for="image">{{ isGeorgian ? 'სურათი' : 'Image' }}:</label>
+      <input
+        type="file"
+        id="image"
+        (change)="onFileSelected($event)"
+        #fileInput
+        required
+      />
+    </div>
+    <div *ngIf="imagePreview">
+      <img [src]="imagePreview" alt="Image Preview" style="max-width: 200px; max-height: 200px;"/>
+    </div>
+    <div>
+      <label for="code">{{ isGeorgian ? 'კოდი' : 'Code' }}:</label>
+      <input
+        type="text"
+        id="code"
+        [(ngModel)]="newItem.code"
+        name="code"
+        required
+        [placeholder]="isGeorgian ? 'შეიყვანე კოდი' : 'Enter Code'"
+      />
+    </div>
+    <button type="submit" [disabled]="itemForm.invalid">{{ isGeorgian ? 'დამატება' : 'Add' }}</button>
+  </form>
+</div>
+
+<main>
+  <div class="tabl">
+    <div class="filter">
+      <i class="fa-solid fa-magnifying-glass"><input type="text" id="categoryFilter" [(ngModel)]="categoryFilter" [placeholder]="isGeorgian ? 'კატეგორია' : 'Category'"/></i>
+      <i class="fa-solid fa-magnifying-glass"><input type="text" id="nameFilter" [(ngModel)]="nameFilter" [placeholder]="isGeorgian ? 'დასახელება' : 'Name'"/></i>
+      <i class="fa-solid fa-magnifying-glass"><input type="text" id="codeFilter" [(ngModel)]="codeFilter" [placeholder]="isGeorgian ? 'კოდი' : 'Code'"/></i>
+      <i class="fa-solid fa-magnifying-glass"><input type="number" id="priceFilter" [(ngModel)]="priceFilter" [placeholder]="isGeorgian ? 'ფასი' : 'Price'"/></i>
+    </div>
+    
+    <table class="item-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>{{ isGeorgian ? 'კატეგორია' : 'Category' }}</th>
+          <th>{{ isGeorgian ? 'დასახელება' : 'Name' }}</th>
+          <th>{{ isGeorgian ? 'კოდი' : 'Code' }}</th>
+          <th>{{ isGeorgian ? 'ფასი' : 'Price' }}</th>
+          <th>{{ isGeorgian ? 'აღწერა' : 'Description' }}</th>
+          <th>{{ isGeorgian ? 'სურათის ბმული' : 'Image URL' }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of existingItems | itemFilter: categoryFilter: nameFilter: codeFilter: priceFilter">
+          <td>{{ item.id }}</td>
+          <td>{{ item.category }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.code }}</td>
+          <td>{{ item.price }}.00₾</td>
+          <td>{{ item.description }}</td>
+          <td><img [src]="item.image" alt="{{ item.name }}" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>

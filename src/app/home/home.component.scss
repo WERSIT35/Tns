@@ -1,0 +1,19 @@
+h1,h2,h3,h4,h5,h6,p,span,a{
+  &:lang(ka) {
+    font-family: "ALK Sanet", sans-serif;
+  }
+  &:lang(en) {
+    font-family: "Reddit Mono", monospace;
+  }
+}
+.popular{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+  color: var(--white);
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+  font-weight: 700;
+  -webkit-text-stroke:0.5px var(--top-color);
+}

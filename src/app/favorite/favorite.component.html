@@ -1,0 +1,15 @@
+<section>
+  <div class="partout" *ngIf="popular">
+    <img [src]="popular.src" alt="{{ popular.name }}" />
+    <div class="part2">
+      <h1>{{ popular.name }}</h1>
+      <p>{{ popular.description }}</p>
+      <p>კატეგორია: {{ popular.category }}</p>
+      <p>კოდი: {{ popular.code }}</p>
+      <p class="price">ფასი: {{ popular.price }}.00₾</p>
+    </div>
+  </div>
+</section>
+<div *ngIf="!popular">
+  <p>Item not found.</p>
+</div>
