@@ -11,6 +11,8 @@
     --mid-color:#1F1F1F;
     --mid-light:#353535;
     --more-light:#919191;
+    --morel-light:#d3d3d3;
+    --mored-light:#707070;
     --base-color:#151515;
 
     --blur-white:#ffffff50;
@@ -18,7 +20,7 @@
 *{
     margin: 0;
     padding: 0;
-    h1,h2,h3,h4,h5,h6,p,span,a{
+    h1,h2,h3,h4,h5,h6,p,span,a,li{
         &:lang(ka) {
           font-family: "ALK Sanet", sans-serif;
         }

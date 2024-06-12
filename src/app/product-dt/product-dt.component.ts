@@ -22,4 +22,9 @@ export class ProductDtComponent {
     const teniID = Number(this.route.snapshot.params['id']);
     this.teni=this.homeService.getAllCategoryId(teniID);
   }
+  protected formatDescription(description: string, item: Item): string {
+    return description
+      .replace(/{{volt}}/g, item.volt.toString())
+      .replace(/{{watt}}/g, item.watt.toString());
+  }
 }

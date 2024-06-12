@@ -34,6 +34,7 @@ export class PopSliderComponent{
         focus: 'center',
         pauseOnHover: false,
         pagination: false,
+        autoplay:true
       });
 
       splide.mount();

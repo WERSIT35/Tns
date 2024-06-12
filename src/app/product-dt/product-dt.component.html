@@ -3,10 +3,20 @@
     <img [src]="teni.image" alt="{{ teni.name }}" />
     <div class="part2">
       <h1>{{ teni.name }}</h1>
-      <p>{{ teni.description }}</p>
+      <p class="descr">{{ formatDescription(teni.description, teni) }}</p>
       <p>კატეგორია: {{ teni.category }}</p>
-      <p>კოდი: {{ teni.code }}</p>
-      <p class="price">ფასი: {{ teni.price }}.00₾</p>
+      <p class="code">კოდი: {{ teni.code }}</p>
+      <!-- <p class="price">ფასი: {{ teni.price }}.00₾</p> -->
+      <div class="details">
+        <h2>დეტალები</h2>
+        <ul>
+          <li>ძაბვა: {{teni.volt}} V</li>
+          <li>სიმძლავრე: {{teni.watt}} W</li>
+          <li>სიგრძე: {{teni.length}} მმ</li>
+          <li>სიგანე: {{teni.width}} მმ</li>
+          <li>მილის დიამეტრი: {{teni.diameter}} მმ</li>
+        </ul>
+       </div>
     </div>
   </div>
 </section>

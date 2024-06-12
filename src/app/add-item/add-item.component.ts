@@ -26,7 +26,12 @@ export class AddItemComponent implements OnInit{
     description: '',
     image: '',
     id: 0,
-    code: ''
+    code: '',
+    volt:0,
+    watt:0,
+    width:0,
+    length:0,
+    diameter:0,
   };
 
   items: Item[] = [];
@@ -68,7 +73,12 @@ export class AddItemComponent implements OnInit{
       description: '',
       image: '',
       id: 0,
-      code: ''
+      code: '',
+      volt:0,
+      watt:0,
+      width:0,
+      length:0,
+      diameter:0,
     };
     this.imagePreview = null;
     if (this.fileInput) {
@@ -83,7 +93,7 @@ export class AddItemComponent implements OnInit{
   isGeorgian: boolean;
 
   constructor(private homeService: HomeService,private translateService: TranslateService) {
-    this.isGeorgian = false; // Default value
+    this.isGeorgian = false;
   }
 
   ngOnInit(): void {
