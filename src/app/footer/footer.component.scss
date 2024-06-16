@@ -4,6 +4,7 @@ footer {
   align-items: center;
   flex-direction: column;
   background-color: var(--base-color);
+
   p,
   h1,
   h2,
@@ -12,22 +13,28 @@ footer {
   span,
   a {
     color: var(--more-light);
+
     &:lang(ka) {
       font-family: "ALK Sanet", sans-serif;
     }
+
     &:lang(en) {
       font-family: "Reddit Mono", monospace;
     }
   }
+
   .cont1 {
     width: 80%;
+
     .cont11 {
       padding: 20px 0;
+
       .cont111 {
         width: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center;
+
         .cont1111,
         .cont1112,
         .cont1113 {
@@ -36,75 +43,90 @@ footer {
           justify-content: center;
           align-items: center;
         }
+
         .cont1111 {
           .cont11111 {
             display: flex;
             justify-content: center;
             align-items: center;
+
             a {
               i {
                 font-size: clamp(2rem, 2.5vw, 2.5rem);
                 color: var(--top-color);
                 padding: 5px 10px;
               }
+
               padding: 5px;
               text-decoration: none;
               display: flex;
               flex-direction: row;
+
               h4 {
                 padding: 5px 0;
                 font-size: clamp(1vw, 2vw, 1.5rem);
               }
+
               span {
                 font-weight: 300;
               }
             }
           }
         }
+
         .cont1112 {
           .cont11112 {
             display: flex;
             justify-content: center;
             align-items: center;
+
             a {
               i {
                 font-size: clamp(2rem, 2.5vw, 2.5rem);
                 color: var(--top-color);
                 padding: 5px 10px;
               }
+
               padding: 5px;
               text-decoration: none;
               display: flex;
               flex-direction: row;
+
               h4 {
                 padding: 5px 0;
                 font-size: clamp(1vw, 2vw, 1.5rem);
               }
+
               span {
                 font-weight: 300;
               }
             }
           }
         }
+
         .cont1113 {
           .cont11113 {
             display: flex;
             justify-content: center;
             align-items: center;
+
             a {
               i {
                 font-size: clamp(2rem, 2.5vw, 2.5rem);
                 color: var(--top-color);
                 padding: 5px 10px;
               }
+
               padding: 5px;
               text-decoration: none;
               display: flex;
               flex-direction: row;
+
               h4 {
                 padding: 5px 0;
                 font-size: clamp(1vw, 2vw, 1.5rem);
               }
+
               span {
                 font-weight: 300;
               }
@@ -113,15 +135,25 @@ footer {
         }
       }
     }
+
     .cont12 {
       border-top: 2px solid var(--mid-light);
+
       .cont121 {
         display: flex;
+        flex-wrap: wrap;
+
+        .cont1211,
+        .cont1212 {
+          width: 100%;
+        }
+
         .cont1211 {
-          width: 50%;
           .cont12111 {
             display: flex;
             flex-direction: column;
+            align-items: center;
+
             .cont121111 {
               a {
                 img {
@@ -130,21 +162,34 @@ footer {
                 }
               }
             }
+
             .cont121112 {
               p {
                 font-size: clamp(0.8rem, 1.2vw, 0.9rem);
                 width: 90%;
                 padding: 5px 0;
                 line-height: 1.5;
+                text-align: center;
               }
             }
+
             .cont121113 {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+
+              span {
+                margin-bottom: 10px;
+              }
+
               a {
                 transition: 0.3s;
+
                 i {
                   font-size: clamp(0.8rem, 1.5vw, 1.7rem);
                   padding: 5px;
                 }
+
                 &:hover {
                   color: var(--top-color);
                 }
@@ -152,11 +197,13 @@ footer {
             }
           }
         }
+
         .cont1212 {
-          width: 50%;
           .cont12121 {
             display: flex;
             flex-direction: column;
+            align-items: center;
+
             .cont121211 {
               h3 {
                 text-wrap: nowrap;
@@ -165,18 +212,24 @@ footer {
                 letter-spacing: 2px;
                 font-size: clamp(0.8rem, 1.5vw, 1.7rem);
                 transition: 0.3s;
+                text-align: center;
+
                 &:hover {
                   color: var(--top-color);
                 }
               }
             }
+
             ul {
               padding: 20px;
               display: flex;
               flex-wrap: wrap;
+              justify-content: center;
               gap: 30px;
+
               li {
                 list-style: none;
+
                 a {
                   transition: 0.3s;
                   &:hover {
@@ -190,6 +243,7 @@ footer {
       }
     }
   }
+
   .cont2 {
     background-color: var(--mid-color);
     width: 100%;
@@ -197,12 +251,22 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 20px 0;
+
     .cont21 {
       width: 80%;
+
       .cont211 {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        text-align: center;
+
+        .cont2111,
+        .cont2112 {
+          width: 100%;
+        }
+
         .cont2111 {
           .cont21111 {
             p {
@@ -213,15 +277,173 @@ footer {
             }
           }
         }
+
         .cont2112 {
           .cont21121 {
             ul {
               display: flex;
-              gap: 30px;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 15px;
+
               li {
                 list-style: none;
+
                 a {
                   text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  footer {
+    .cont1 {
+      width: 90%;
+
+      .cont11 {
+        .cont111 {
+          flex-direction: column;
+
+          .cont1111,
+          .cont1112,
+          .cont1113 {
+            width: 100%;
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      .cont12 {
+        .cont121 {
+          flex-direction: column;
+
+          .cont1211,
+          .cont1212 {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .cont2 {
+      .cont21 {
+        width: 90%;
+        text-align: center;
+
+        .cont211 {
+          flex-direction: column;
+
+          .cont2111,
+          .cont2112 {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    .cont1 {
+      .cont11 {
+        .cont111 {
+          .cont1111,
+          .cont1112,
+          .cont1113 {
+            a {
+              i {
+                font-size: 1.5rem;
+              }
+
+              h4 {
+                font-size: 1rem;
+              }
+
+              span {
+                font-size: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+
+      .cont12 {
+        .cont121 {
+          .cont1211 {
+            .cont12111 {
+              .cont121111 {
+                a {
+                  img {
+                    width: 60%;
+                  }
+                }
+              }
+
+              .cont121112 {
+                p {
+                  font-size: 0.8rem;
+                }
+              }
+
+              .cont121113 {
+                span {
+                  font-size: 0.8rem;
+                }
+
+                a {
+                  i {
+                    font-size: 1rem;
+                  }
+                }
+              }
+            }
+          }
+
+          .cont1212 {
+            .cont12121 {
+              .cont121211 {
+                h3 {
+                  font-size: 1rem;
+                }
+              }
+
+              ul {
+                gap: 15px;
+                li {
+                  a {
+                    font-size: 0.8rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .cont2 {
+      .cont21 {
+        .cont211 {
+          .cont2111,
+          .cont2112 {
+            p {
+              font-size: 0.8rem;
+            }
+
+            ul {
+              gap: 10px;
+
+              li {
+                a {
+                  font-size: 0.8rem;
                 }
               }
             }

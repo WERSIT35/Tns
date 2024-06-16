@@ -1,10 +1,10 @@
 header {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   background-color: var(--base-color);
-  height: 135px;
+  height: auto;
+  justify-content: center;
+  align-items: center;
 
   .sec1 {
     padding: 5px 0;
@@ -14,6 +14,9 @@ header {
     align-items: center;
 
     .contact {
+      display: flex;
+      flex-wrap: wrap;
+
       a {
         text-decoration: none;
         color: var(--light-color);
@@ -38,6 +41,8 @@ header {
     }
 
     .social {
+      display: flex;
+
       a {
         color: var(--light-color);
 
@@ -69,7 +74,7 @@ header {
       justify-content: space-between;
       align-items: center;
       width: 80%;
-      height: 100%; // Ensure nav takes the full height
+      height: 100%;
 
       a {
         img {
@@ -91,8 +96,8 @@ header {
           justify-content: center;
 
           a {
-            display: flex; // Add display flex
-            align-items: center; // Align items vertically
+            display: flex;
+            align-items: center;
             color: var(--light-color);
             font-size: clamp(1rem, 1.5vw, 1.2rem);
             text-decoration: none;
@@ -136,6 +141,70 @@ header {
   .flag-icon {
     width: 30px;
     height: auto;
-    margin-left: 10px; // Adjust as needed for spacing
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    .sec2 {
+      nav {
+        flex-direction: column;
+        a{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: none;
+        }
+
+        ul {
+          flex-direction: row;
+          gap: 15px;
+          li {
+            width: 100%;
+            justify-content: center;
+
+            a {
+              font-size: clamp(0.8rem, 1.5vw, 1rem);
+              padding: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    .sec1 {
+      .contact a {
+        padding: 3px;
+        font-size: 0.8rem;
+      }
+
+      .social a i {
+        font-size: 16px;
+      }
+    }
+
+    .sec2 {
+      nav {
+        width: 100%;
+        a{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: none;
+        }
+        ul {
+          gap: 10px;
+
+          li a {
+            font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+          }
+        }
+      }
+    }
   }
 }
