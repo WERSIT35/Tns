@@ -5,6 +5,7 @@ import { Home, Item } from '../home/home';
 import { Popular } from '../popular';
 import { HomeService } from '../home.service';
 import { TranslateService } from '../translate.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-products',
@@ -28,7 +29,7 @@ export class ProductsComponent {
 
   constructor(
     private homeService: HomeService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
   ) {}
 
   ngOnInit(): void {
