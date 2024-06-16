@@ -2,22 +2,32 @@
   <div class="partout" *ngIf="popular">
     <img [src]="popular.image" alt="{{ popular.name }}" />
     <div class="part2">
-      <h1>{{ popular.name}}</h1>
+      <h1>{{ popular.name }}</h1>
       <p class="descr">{{ popular.description }}</p>
       <p>კატეგორია: {{ popular.category }}</p>
       <p class="code">კოდი: {{ popular.code }}</p>
       <!-- <p class="price">ფასი: {{ popular.price }}.00₾</p> -->
       <div class="details">
-        <h2>დეტალები</h2>
+        <h2>დეტალები:</h2>
         <ul>
-          <li>ძაბვა: {{popular.volt}} V</li>
-          <li>სიმძლავრე: {{popular.watt}} W</li>
-          <li>სიგრძე: {{popular.length}} მმ</li>
-          <li>სიგანე: {{popular.width}} მმ</li>
-          <li>მილის დიამეტრი: {{popular.diameter}} მმ</li>
+          <li>
+            ძაბვა: <span> {{ popular.volt }} V </span>
+          </li>
+          <li>
+            სიმძლავრე: <span> {{ popular.watt }} W </span>
+          </li>
+          <li>
+            სიგრძე: <span> {{ popular.length }} მმ </span>
+          </li>
+          <li>
+            სიგანე: <span> {{ popular.width }} მმ </span>
+          </li>
+          <li>
+            მილის დიამეტრი: <span> {{ popular.diameter }} მმ </span>
+          </li>
         </ul>
-       </div>
-       <a href="tel:+995593268984">შეკვეთა</a>
+      </div>
+      <a href="tel:+995593268984">შეკვეთა</a>
     </div>
   </div>
 </section>

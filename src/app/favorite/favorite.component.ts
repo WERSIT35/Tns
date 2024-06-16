@@ -12,12 +12,18 @@ import { CommonModule } from '@angular/common';
   styleUrl: './favorite.component.scss'
 })
 export class FavoriteComponent {
-  route:ActivatedRoute=inject(ActivatedRoute);
-  homeservice=inject(HomeService)
-  popular:Popular | undefined;
+   route: ActivatedRoute = inject(ActivatedRoute);
+  homeservice = inject(HomeService);
+  popular: Popular | undefined;
 
-  constructor(){
-    const popularID=Number(this.route.snapshot.params['id']);
-    this.popular=this.homeservice.getAllPopularId(popularID);
+  constructor() {
+    const popularID = Number(this.route.snapshot.paramMap.get('id'));
+    this.popular = this.homeservice.getAllPopularId(popularID);
+  }
+
+  protected formatDescription(description: string, item: Popular): string {
+    return description
+      .replace(/{{volt}}/g, item.volt.toString())
+      .replace(/{{watt}}/g, item.watt.toString());
   }
 }

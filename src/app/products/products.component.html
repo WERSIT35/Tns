@@ -19,11 +19,12 @@
             <a [routerLink]="['/product-dt', item.id]">
               <img [src]="item.image" [alt]="item.name" />
               <div class="txt">
-                <h4>{{ item.name }} 
-                  <span>{{item.volt}}V / {{item.watt}}W</span>
+                <h4>{{ item.name }}</h4>
+                <div class="spns">
+                  <span>{{item.volt}}V/{{item.watt}}W</span>
                   <span>{{item.length}}მმ/{{item.width}}მმ</span>
                   <span>{{item.diameter}}მმ</span>
-                </h4>
+                </div>
                 <p class="code">{{item.code}}</p>
                 <!-- <p class="price">ფასი: {{ item.price }}.00₾</p> -->
                 <button>შეკვეთა</button>

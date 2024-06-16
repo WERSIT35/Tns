@@ -348,7 +348,7 @@ export class HomeService {
   protected categorysListEN: Home[] = [];
 
   protected popularList: Popular[] = [
-    {diameter:6,length:986,width:987,watt:988,volt:220,category: 'ვენტილაციის ტენები',name: 'ვენტილაციის ტენი',price:null,description: 'ძაბვა: {{volt}} V, სიმძლავრე: {{watt}} W',image: 'assets/tenebi/Ventilation/91970.jpg',id: 301,code: '91970',},
+    {diameter:6,length:986,width:987,watt:988,volt:220,category: 'ვენტილაციის ტენები',name: 'ვენტილაციის ტენი',price:null,description: 'ვენტილაციის ტენი',image: 'assets/tenebi/Ventilation/91970.jpg',id: 301,code: '91970',},
     {
       category: 'ვენტილაციის ტენები',
       name: 'სახელი',
@@ -417,7 +417,7 @@ export class HomeService {
       image: 'assets/tenebi/Oven/25089-F3.jpg',
       id: 10008,
       code: '25089-F3',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:6.4,length:330,width:358.5,watt:1100,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -427,7 +427,7 @@ export class HomeService {
       image: 'assets/tenebi/Oven/25091-F3.jpg',
       id: 10009,
       code: '25091-F3',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:6.4,length:285,width:365,watt:2100,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -437,7 +437,7 @@ export class HomeService {
       image: 'assets/tenebi/Oven/70055-F1.jpg',
       id: 1010,
       code: '70055-F1',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:6.5,length:230,width:365,watt:600,volt:220,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -447,7 +447,7 @@ export class HomeService {
       image: 'assets/tenebi/Oven/24764-F3.jpg',
       id: 1011,
       code: '24764-F3',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:6.4,length:297,width:338,watt:800,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -457,7 +457,7 @@ export class HomeService {
       image: 'assets/tenebi/Oven/24206-F3.jpg',
       id: 1012,
       code: '24206-F3',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:6.4,length:205,width:213,watt:1800,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -467,7 +467,7 @@ export class HomeService {
       image: 'assets/tenebi/Oven/24086.jpg',
       id: 1013,
       code: '24086',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:6.5,length:192.5,width:206,watt:2000,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -477,7 +477,7 @@ export class HomeService {
       image: 'assets/tenebi/Oven/24884-F3.jpg',
       id: 1014,
       code: '24884-F3',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:6.5,length:192.5,width:231,watt:1800,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -487,7 +487,7 @@ export class HomeService {
       image: 'assets/tenebi/Industrial/93582.jpg',
       id: 1015,
       code: '93582',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.5,length:240,width:180,watt:2000,volt:220,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -497,7 +497,7 @@ export class HomeService {
       image: 'assets/tenebi/Washing Machine/93684.jpg',
       id: 1016,
       code: '93684',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.5,length:69,width:170,watt:1700,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -507,7 +507,7 @@ export class HomeService {
       image: 'assets/tenebi/Industrial/92764.jpg',
       id: 1017,
       code: '92764',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.5,length:128,width:230,watt:2000,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -517,7 +517,7 @@ export class HomeService {
       image: 'assets/tenebi/Industrial/93505.jpg',
       id: 1018,
       code: '93505',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.3,length:140,width:269.5,watt:2400,volt:220,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -527,7 +527,7 @@ export class HomeService {
       image: 'assets/tenebi/Coffe/92481-1.jpg',
       id: 1019,
       code: '92481-1',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.5,length:147,width:140,watt:1400,volt:220,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -537,7 +537,7 @@ export class HomeService {
       image: 'assets/tenebi/Industrial/93641.jpg',
       id: 1020,
       code: '93641',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.5,length:317,width:153,watt:2500,volt:240,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -547,7 +547,7 @@ export class HomeService {
       image: 'assets/tenebi/Coffe/93704.jpg',
       id: 1021,
       code: '93704',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.3,length:509,width:91.5,watt:1667,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -557,7 +557,7 @@ export class HomeService {
       image: 'assets/tenebi/Coffe/92571.jpg',
       id: 1022,
       code: '92571',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.5,length:212,width:100,watt:1900,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -567,7 +567,7 @@ export class HomeService {
       image: 'assets/tenebi/Coffe/92655.jpg',
       id: 1023,
       code: '92655',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.5,length:236,width:120,watt:2000,volt:220,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -577,7 +577,7 @@ export class HomeService {
       image: 'assets/tenebi/Oven/24971-F3.jpg',
       id: 1024,
       code: '24971-F3',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:6.5,length:180,width:200,watt:1500,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -587,7 +587,7 @@ export class HomeService {
       image: 'assets/tenebi/Oven/24975-F3.jpg',
       id: 1025,
       code: '24975-F3',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:6.5,length:192.5,width:206,watt:2200,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -596,8 +596,8 @@ export class HomeService {
       description: 'პოპილარული',
       image: 'assets/tenebi/Termostat/RTD10-28.jpg',
       id: 1026,
-      code: 'RTD1C-28',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      code: 'RTD10-28',
+      diameter:8.3,length:280,width:54.5,watt:1000,volt:220,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -607,7 +607,7 @@ export class HomeService {
       image: 'assets/tenebi/Oven/1159-F2.jpg',
       id: 1027,
       code: '1159-F2',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:6.5,length:335,width:390,watt:1350,volt:220,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -617,7 +617,7 @@ export class HomeService {
       image: 'assets/tenebi/Industrial/91588.jpg',
       id: 1028,
       code: '91588',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.5,length:125,width:287,watt:2500,volt:220,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -627,7 +627,7 @@ export class HomeService {
       image: 'assets/tenebi/Industrial/92136.jpg',
       id: 1029,
       code: '92136',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.5,length:158,width:282,watt:3000,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -637,7 +637,7 @@ export class HomeService {
       image: 'assets/tenebi/Oven/1161-F3.jpg',
       id: 1030,
       code: '1161-F3',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:6.5,length:335,width:408.5,watt:1500,volt:220,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -647,7 +647,7 @@ export class HomeService {
       image: 'assets/tenebi/Oven/22986.jpg',
       id: 1031,
       code: '22986',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:6.5,length:381,width:365,watt:1200,volt:240,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -657,7 +657,7 @@ export class HomeService {
       image: 'assets/tenebi/Coffe/91684.jpg',
       id: 1032,
       code: '91684',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.5,length:91,width:40,watt:1000,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -667,7 +667,7 @@ export class HomeService {
       image: 'assets/tenebi/Coffe/91683.jpg',
       id: 1033,
       code: '91683',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.5,length:200.5,width:45,watt:2500,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -677,7 +677,7 @@ export class HomeService {
       image: 'assets/tenebi/Coffe/24533.jpg',
       id: 1034,
       code: '24533',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:6.5,length:155,width:140,watt:1200,volt:220,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -687,7 +687,7 @@ export class HomeService {
       image: 'assets/tenebi/Termostat/TR-1-7027.jpg',
       id: 1035,
       code: 'TR-1/7027',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:0,length:0,width:0,watt:0,volt:0,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -697,7 +697,7 @@ export class HomeService {
       image: 'assets/tenebi/Termostat/TRS-657527.jpg',
       id: 1036,
       code: 'TRS/657527',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:0,length:0,width:0,watt:0,volt:0,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -707,7 +707,7 @@ export class HomeService {
       image: 'assets/tenebi/Industrial/91976.jpg',
       id: 1037,
       code: '91976',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.5,length:339,width:512,watt:2650,volt:220,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -717,7 +717,7 @@ export class HomeService {
       image: 'assets/tenebi/Industrial/92705.jpg',
       id: 1038,
       code: '92705',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.5,length:382,width:298,watt:2670,volt:230,
     },
     {
       category: 'ვენტილაციის ტენები',
@@ -727,7 +727,7 @@ export class HomeService {
       image: 'assets/tenebi/Washing Machine/93676.jpg',
       id: 1039,
       code: '93676',
-      diameter:6,length:986,width:987,watt:988,volt:220,
+      diameter:8.5,length:383,width:80.5,watt:2000,volt:230,
     },
   ];
   itemAdded: EventEmitter<Item> = new EventEmitter<Item>();
