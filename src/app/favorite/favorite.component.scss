@@ -68,6 +68,18 @@ section {
           }
         }
       }
+      a{
+        margin-top: 5px;
+        text-decoration: none;
+        color: var(--base-color);
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: clamp(1rem,1.2vw,1.1rem);
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid var(--top-color);
+        background-color: var(--top-fade);
+      }
     }
   }
 }
