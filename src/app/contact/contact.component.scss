@@ -1,3 +1,7 @@
+.sec{
+display: flex;
+justify-content: center;
+align-items: center;
 .contact-section {
   width: 80%;
   background-color: #FFEADB;
@@ -113,6 +117,7 @@ h1 {
       }
     }
   }
+}
 }
 
 // Responsive Styles
