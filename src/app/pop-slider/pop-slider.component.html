@@ -1,7 +1,12 @@
 <section id="section" class="splide" aria-label="Splide Basic HTML Example">
-    <div class="splide__track">
-          <ul  class="splide__list">
-              <li *ngFor="let item of popularList" class="splide__slide"><a [routerLink]="['/favorite', item.id]"><img [src]="item.image" alt=""><p>{{item.code}}</p></a></li>
-          </ul>
-    </div>
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li *ngFor="let item of popularList" class="splide__slide">
+        <a [routerLink]="['/favorite', item.id]"
+          ><img [src]="item.image" alt="" />
+          <p>{{ item.code }}</p></a
+        >
+      </li>
+    </ul>
+  </div>
 </section>

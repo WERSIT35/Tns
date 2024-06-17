@@ -49,3 +49,40 @@
       }
     }
   }
+
+
+  @media (max-width: 768px) {
+    #section {
+        height: 150px;
+        padding: 20px;
+    }
+
+    #section ul {
+        gap: 10px;
+    }
+
+    #section li {
+        width: 80px;
+    }
+
+    #section p {
+        padding: 3px 10px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #section {
+        padding: 10px;
+        height:100px;
+    }
+
+    #section li {
+        width: 60px;
+    }
+
+    #section p {
+        padding: 2px 5px;
+        font-size: 8px;
+    }
+}

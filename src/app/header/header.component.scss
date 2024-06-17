@@ -42,12 +42,12 @@ header {
 
     .social {
       display: flex;
-
+      gap: 20px;
       a {
         color: var(--light-color);
 
         i {
-          font-size: 20px;
+          font-size: 30px;
         }
       }
     }
