@@ -3,47 +3,57 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 30px 0;
+
   .partout {
     display: flex;
+    flex-wrap: wrap;
     border: 5px solid var(--top-color);
     border-radius: 20px;
     padding: 15px;
     background-color: var(--white);
+    justify-content: center;
+    align-items: center;
     img {
-      width: 350px;
+      width: 100%;
+      max-width: 350px;
       padding-right: 10px;
       object-fit: contain;
     }
+
     .part2 {
       flex-direction: column;
       display: flex;
       justify-content: center;
       align-items: start;
       gap: 10px;
-      h1{
+      width: 100%;
+      h1 {
         font-size: clamp(1rem, 2vw, 2rem);
         border-bottom: 2px solid var(--top-color);
         padding: 10px 0;
       }
-      p{
+
+      p {
         padding: 5px 0;
       }
-      .descr{
+
+      .descr {
         margin: 10px 0;
         background-color: #dbdbdb;
         padding: 5px;
         border-radius: 5px;
       }
-      .code{
+
+      .code {
         padding: 5px;
         border-radius: 5px;
         color: var(--white);
         background-color: #f62216;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'%3E%3Ccircle fill='%233F0000' cx='45' cy='45' r='10'/%3E%3Cg fill='%23800' fill-opacity='1'%3E%3Ccircle cx='0' cy='90' r='10'/%3E%3Ccircle cx='90' cy='90' r='10'/%3E%3Ccircle cx='90' cy='0' r='10'/%3E%3Ccircle cx='0' cy='0' r='10'/%3E%3C/g%3E%3C/svg%3E");
       }
-      .price{
+
+      .price {
         background-color: #1fa031;
         border-radius: 5px;
         text-align: center;
@@ -52,40 +62,81 @@ section {
         font-size: clamp(1rem, 1.5vw, 1.5rem);
       }
 
-      .details{
+      .details {
         width: 95%;
-        h2{
+
+        h2 {
           padding: 5px;
         }
-        ul{
+
+        ul {
           width: 100%;
           border: 2px solid black;
           padding: 5px;
           line-height: 1.5;
-          li{
+
+          li {
             list-style: none;
             padding-left: 3px;
-            &:nth-child(odd){
+
+            &:nth-child(odd) {
               background-color: var(--morel-light);
             }
-            span{
+
+            span {
               color: var(--top-much);
             }
           }
         }
       }
-      a{
+
+      a {
         margin-top: 5px;
         text-decoration: none;
         color: var(--base-color);
         letter-spacing: 2px;
         font-weight: 600;
-        font-size: clamp(1rem,1.2vw,1.1rem);
+        font-size: clamp(1rem, 1.2vw, 1.1rem);
         padding: 10px;
         border-radius: 5px;
         border: 2px solid var(--top-color);
         background-color: var(--top-fade);
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .partout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    padding-right: 0;
+  }
+
+  .part2 {
+    align-items: center;
+    text-align: center;
+  }
+
+  .details {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .price {
+    font-size: 1.2rem;
+  }
+
+  a {
+    font-size: 1rem;
+    padding: 8px;
   }
 }
