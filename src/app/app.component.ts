@@ -22,15 +22,19 @@ export class AppComponent implements OnInit{
       
     });
   }
-ngOnInit(): void {
+  ngOnInit(): void {
     this.seo.initDefaultMetaInformation();
-    this.seo.setTitle('Home Page | Tenebi');
+    this.seo.setTitle('ტენები | Tubular Heating Elements');
     this.seo.setMetaTags({
-      description: 'Welcome to the home page of Tenebi, your source for high-quality heating elements.',
-      keywords: 'home, Tenebi, heating elements',
-      'og:title': 'მთავარი | ტენები | Tenebi',
-      'og:description': 'Welcome to the home page of Tenebi, your source for high-quality heating elements.'
+        description: 'Welcome to the home page of Tenebi, your source for high-quality tubular heating elements and heating solutions.',
+        keywords: 'home, Tenebi, heating elements, tubular heating elements, industrial heating solutions, custom heating elements, ტენები, ტენები, ტენები, სარეცხი მანქანის ტენები, საცხობის ტენები, ტენი, საშაურმის ტენები, საშაურმის ტენი, ტოსტერის ტენები, ტოსტერის ტენი, ყავის აპარატის ტენები, ყავის აპარატის ტენი, ღუმელის ტენები,ღუმელის ტენი,გრილის ტენები, გრილის ტენი, თერმოსტატი, თერმოსტატები, თერმო რეგულატორები, სამრეწველო ტენები, წყლის გამაცხელებელი ტენები,სამრეწველო ტენი, წყლის გამაცხელებელი ტენი, ვენტილაციის ტენი, ვენტილატორის ტენი, კონდიციონერის ტენი, კონდიციონერის ტენები',
+        'og:title': 'მთავარი | ტენები | Tenebi',
+        'og:description': 'Welcome to the home page of Tenebi, your source for high-quality tubular heating elements and heating solutions.',
+        'og:type': 'website',
+        'og:url': 'https://heatflow.netlify.app/',
+        'og:site_name': 'Tenebi | HeatFlow | Tubular Heating Elements',
     });
 }
+
 
 }
