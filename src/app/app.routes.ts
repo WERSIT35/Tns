@@ -13,5 +13,4 @@ export const routes: Routes = [
     {path:'favorite/:id',component:FavoriteComponent},
     {path:'products',component:ProductsComponent},
     {path:'contact',component:ContactComponent},
-
 ];

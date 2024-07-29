@@ -1,49 +1,55 @@
 {
-  "hash": "2c845c3d",
-  "configHash": "7af454ac",
+  "hash": "06ed66c3",
+  "configHash": "b20044c1",
   "lockfileHash": "fef3a50d",
-  "browserHash": "664aa3d4",
+  "browserHash": "b89370a7",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "22f06eb5",
+      "fileHash": "7c13f19d",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "d94d98fb",
+      "fileHash": "f1d4babb",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "5ad4f201",
+      "fileHash": "25b0ebdb",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "e5e45aa4",
+      "fileHash": "0e662ce2",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "fc2459ea",
+      "fileHash": "c2879f90",
       "needsInterop": false
     },
     "@splidejs/splide": {
       "src": "../../../../../node_modules/@splidejs/splide/dist/js/splide.esm.js",
       "file": "@splidejs_splide.js",
-      "fileHash": "ca0572c2",
+      "fileHash": "5de5edd6",
       "needsInterop": false
     },
     "rxjs": {
       "src": "../../../../../node_modules/rxjs/dist/esm5/index.js",
       "file": "rxjs.js",
-      "fileHash": "8f606c12",
+      "fileHash": "e48d5099",
+      "needsInterop": false
+    },
+    "@angular/compiler": {
+      "src": "../../../../../node_modules/@angular/compiler/fesm2022/compiler.mjs",
+      "file": "@angular_compiler.js",
+      "fileHash": "1fa4461b",
       "needsInterop": false
     }
   },
