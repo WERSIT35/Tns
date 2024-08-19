@@ -15,7 +15,7 @@ export class SeoService {
   initDefaultMetaInformation() {
     this.setTitle('ტენები | Tenebi | HeatFlow');
     this.setMetaTags({
-      description: 'sasurveli tenebis damzadeba umaglesi xarisxis',
+      description: 'უმაღლესი ხარისხის ტენები',
       keywords: 'Tenebi, ტენები, გამაცხელებელი, ტოსტერის გამაცხელებელი, წყლის გამაცხელებელი, გრილის გამაცხელებელი, სარეცხი მანქანის გამაცხელებელი, ვენტილაციის გამაცხელებელი, ღუბელის ტენები, ტოსტერის ტენები, გრილის ტენები, თერმოსტატები, ყავის აპარატის ტენები, სამრეწველო ტენები, სარეცხი მანქანის ტენები, ვენტილაციის ტენები',
       author: 'Tenebi',
       robots: 'index, follow',
