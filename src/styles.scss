@@ -1,35 +1,82 @@
-// @tailwind base;
-// @tailwind components;
-// @tailwind utilities;
-@import url('@splidejs/splide/css');
+@use '@splidejs/splide/css';
 
-:root{
-  --top-fade:#f3c9bc;
-  --top-color:#e0582e;
-  --top-much:#b43008;
-    --light-color:#EEEEEE;
-    --white:#fff;
-    --mid-color:#1F1F1F;
-    --mid-light:#353535;
-    --more-light:#919191;
-    --morel-light:#d3d3d3;
-    --mored-light:#707070;
-    --base-color:#151515;
+:root {
+  --top-fade: #f3c9bc;
+  --top-color: #e0582e;
+  --top-much: #b43008;
+  --light-color: #eeeeee;
+  --white: #fff;
+  --mid-color: #1f1f1f;
+  --mid-light: #353535;
+  --more-light: #919191;
+  --morel-light: #d3d3d3;
+  --mored-light: #707070;
+  --base-color: #151515;
+  --blur-white: #ffffff50;
+}
 
-    --blur-white:#ffffff50;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-*{
-    margin: 0;
-    padding: 0;
-    h1,h2,h3,h4,h5,h6,p,span,a,li,button,label,input,select,textarea{
-        &:lang(ka) {
-          font-family: "ALK Sanet", sans-serif;
-        }
-        &:lang(en) {
-          font-family: "Reddit Mono", monospace;
-        }
-      }
+
+:lang(ka),
+:lang(ka) h1,
+:lang(ka) h2,
+:lang(ka) h3,
+:lang(ka) h4,
+:lang(ka) h5,
+:lang(ka) h6,
+:lang(ka) p,
+:lang(ka) span,
+:lang(ka) a,
+:lang(ka) li,
+:lang(ka) button,
+:lang(ka) label,
+:lang(ka) input,
+:lang(ka) select,
+:lang(ka) textarea {
+  font-family: 'ALK Sanet', sans-serif;
 }
-body{
-    background-color: var(--light-color);
+
+:lang(en),
+:lang(en) h1,
+:lang(en) h2,
+:lang(en) h3,
+:lang(en) h4,
+:lang(en) h5,
+:lang(en) h6,
+:lang(en) p,
+:lang(en) span,
+:lang(en) a,
+:lang(en) li,
+:lang(en) button,
+:lang(en) label,
+:lang(en) input,
+:lang(en) select,
+:lang(en) textarea {
+  font-family: 'Reddit Mono', monospace;
+}
+
+body {
+  background-color: var(--light-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--top-color);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
