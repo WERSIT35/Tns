@@ -11,10 +11,13 @@ import { map } from 'rxjs/operators';
 import { ProductsService } from '../products.service';
 import { SeoService } from '../seo.service';
 import { DisplayProduct } from '../data/types';
+import { SimilarProductsComponent } from '../similar-products/similar-products.component';
+import { TranslateService } from '../translate.service';
+import { categoryToEn, productNameToEn } from '../data/i18n';
 
 @Component({
   selector: 'app-product-dt',
-  imports: [RouterLink],
+  imports: [RouterLink, SimilarProductsComponent],
   templateUrl: './product-dt.component.html',
   styleUrl: './product-dt.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,6 +26,7 @@ export class ProductDtComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly productsSvc = inject(ProductsService);
   private readonly seo = inject(SeoService);
+  private readonly translate = inject(TranslateService);
 
   private readonly id = toSignal(
     this.route.paramMap.pipe(map((p) => Number(p.get('id')))),
@@ -32,14 +36,29 @@ export class ProductDtComponent {
   readonly product = computed<DisplayProduct | undefined>(() =>
     this.productsSvc.getProductById(this.id()),
   );
+  readonly isGeorgian = toSignal(
+    this.translate.currentLanguage$.pipe(map((l) => l === 'ka')),
+    { initialValue: true },
+  );
 
   readonly descriptionText = computed(() => {
     const p = this.product();
     if (!p) return '';
+    if (!this.isGeorgian()) {
+      return `Voltage: ${p.volt} V, Power: ${p.watt} W`;
+    }
     return p.description
       .replaceAll('{{volt}}', String(p.volt))
       .replaceAll('{{watt}}', String(p.watt));
   });
+
+  categoryLabel(category: string): string {
+    return this.isGeorgian() ? category : categoryToEn(category);
+  }
+
+  productTitle(p: DisplayProduct): string {
+    return this.isGeorgian() ? p.name : productNameToEn(p.category, p.name);
+  }
 
   constructor() {
     effect(() => this.syncSeo(this.product()));

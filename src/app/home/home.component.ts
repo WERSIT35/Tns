@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs/operators';
-import { BannerComponent } from '../banner/banner.component';
+import { HeroComponent } from '../hero/hero.component';
 import { PopSliderComponent } from '../pop-slider/pop-slider.component';
 import { ProductsComponent } from '../products/products.component';
 import { TranslateService } from '../translate.service';
@@ -10,7 +10,7 @@ import { TranslateService } from '../translate.service';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  imports: [BannerComponent, PopSliderComponent, ProductsComponent],
+  imports: [HeroComponent, PopSliderComponent, ProductsComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {

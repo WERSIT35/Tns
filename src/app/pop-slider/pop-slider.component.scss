@@ -1,7 +1,7 @@
 .pop-slider {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0 var(--space-4);
+  padding: 0 calc(var(--space-5) + 14px);
 }
 
 .card {
@@ -12,12 +12,17 @@
   border: 1px solid var(--color-line);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: transform var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease), border-color var(--t-base) var(--ease);
+  transition: transform var(--t-base) var(--ease),
+    box-shadow var(--t-base) var(--ease),
+    border-color var(--t-base) var(--ease);
 
   &:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-2);
     border-color: var(--color-brand-soft);
+    img {
+      transform: scale(1.04);
+    }
   }
 
   &__media {
@@ -25,41 +30,86 @@
     background: var(--color-surface-2);
     display: grid;
     place-items: center;
-    padding: var(--space-4);
-    img { width: 100%; height: 100%; object-fit: contain; }
+    padding: 10px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 520ms var(--ease);
+      will-change: transform;
+    }
   }
 
   &__body {
     padding: var(--space-3) var(--space-4) var(--space-4);
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
     border-top: 1px solid var(--color-line);
   }
 
   &__code {
-    font-size: var(--fs-sm);
-    color: var(--color-mute);
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-size: var(--fs-xs);
+    color: var(--color-brand);
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
   }
 
   &__title {
     font-size: var(--fs-base);
     color: var(--color-ink);
-    font-weight: 600;
-    line-height: 1.25;
+    font-weight: 700;
+    line-height: var(--lh-snug);
   }
 }
 
 :host ::ng-deep {
-  .splide__arrow {
-    background: var(--color-white);
-    box-shadow: var(--shadow-1);
-    width: 40px;
-    height: 40px;
-    opacity: 0.95;
-    svg { fill: var(--color-brand); }
-    &:hover:not(:disabled) { background: var(--color-brand); svg { fill: var(--color-white); } }
+  .splide {
+    position: relative;
+    padding: 4px 0 var(--space-3);
+  }
+
+  .splide__arrows {
+    .splide__arrow {
+      width: 48px;
+      height: 48px;
+      background: var(--color-white);
+      border: 1px solid var(--color-line);
+      box-shadow: var(--shadow-2);
+      opacity: 1;
+      transition: background var(--t-fast) var(--ease),
+        border-color var(--t-fast) var(--ease),
+        transform var(--t-fast) var(--ease);
+
+      svg {
+        fill: var(--color-ink);
+        width: 16px;
+        height: 16px;
+      }
+
+      &:hover:not(:disabled) {
+        background: var(--color-brand);
+        border-color: var(--color-brand);
+        transform: translateY(-50%) scale(1.05);
+        svg {
+          fill: var(--color-white);
+        }
+      }
+
+      &:disabled {
+        opacity: 0.35;
+      }
+    }
+
+    .splide__arrow--prev { left: 6px; }
+    .splide__arrow--next { right: 6px; }
+  }
+}
+
+@media (max-width: 720px) {
+  :host ::ng-deep .splide__arrows {
+    display: none;
   }
 }

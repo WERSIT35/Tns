@@ -1,0 +1,50 @@
+﻿@if (items().length > 0) {
+  <section class="similar" aria-labelledby="similar-title">
+    <header class="similar__head">
+      <span class="similar__icon" aria-hidden="true">
+        <app-category-icon [category]="category()" [size]="22" />
+      </span>
+      <h2 id="similar-title">{{ heading() }}</h2>
+      <span class="similar__count" aria-hidden="true">{{ items().length }}</span>
+    </header>
+
+    <section
+      #slider
+      class="splide similar__splide"
+      [attr.aria-label]="heading()"
+    >
+      <div class="splide__track">
+        <ul class="splide__list">
+          @for (item of items(); track trackById($index, item); let i = $index) {
+            <li class="splide__slide similar__slide">
+              <a
+                class="card"
+                [routerLink]="['/product-dt', item.id]"
+                [attr.aria-label]="item.name + ' ' + item.code"
+              >
+                <div class="card__media">
+                  <picture>
+                    <source [srcset]="item.imageWebp" type="image/webp" />
+                    <img
+                      [src]="item.image"
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      width="320"
+                      height="320"
+                    />
+                  </picture>
+                </div>
+                <div class="card__body">
+                  <p class="card__code">{{ item.code }}</p>
+                  <h3 class="card__name">{{ item.name }}</h3>
+                  <p class="card__spec">{{ item.volt }}V · {{ item.watt }}W</p>
+                </div>
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+    </section>
+  </section>
+}

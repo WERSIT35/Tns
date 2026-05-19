@@ -1,0 +1,112 @@
+﻿<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="glow glow--brand"></div>
+    <div class="glow glow--cool"></div>
+    <div class="grid-pattern"></div>
+  </div>
+
+  <div class="hero__inner">
+    <div class="hero__content">
+      <p class="badge">
+        <span class="badge__dot" aria-hidden="true"></span>
+        <span>HeatFlow · Tenebi</span>
+      </p>
+
+      <h1 id="hero-title" class="hero__title">
+        @if (isGeorgian()) {
+          უმაღლესი ხარისხის
+          <span class="grad">ტენები</span>
+          ნებისმიერი მოწყობილობისთვის
+        } @else {
+          Premium
+          <span class="grad">heating elements</span>
+          for any appliance
+        }
+      </h1>
+
+      <p class="hero__sub">
+        {{
+          isGeorgian()
+            ? 'ღუმელის, ტოსტერის, გრილის, სამრეწველო, წყლის და სარეცხი მანქანის ტენები — უმაღლესი ხარისხი, ინდივიდუალური დამზადება, სწრაფი მიწოდება.'
+            : 'Oven, toaster, grill, industrial, water and washing-machine elements — top quality, custom manufacturing, fast delivery.'
+        }}
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" routerLink="/products">
+          <span>{{ isGeorgian() ? 'პროდუქციის ნახვა' : 'Browse products' }}</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/>
+          </svg>
+        </a>
+        <a class="btn btn--ghost" href="tel:+995593268984">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.9.6.6 0 1 .4 1 1V19c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1H7c.6 0 1 .4 1 1 0 1.4.2 2.7.6 3.9.1.4 0 .8-.3 1.1l-1.7 1.8z"/>
+          </svg>
+          <span>+995 593 268 984</span>
+        </a>
+      </div>
+
+      <ul class="hero__features" aria-label="{{ isGeorgian() ? 'ძირითადი უპირატესობები' : 'Key advantages' }}">
+        @for (f of features; track f.iconKey; let i = $index) {
+          <li class="feature" [style.--i]="i">
+            <span class="feature__icon" aria-hidden="true">
+              @switch (f.iconKey) {
+                @case ('quality') {
+                  <svg viewBox="0 0 24 24" width="18" height="18" focusable="false">
+                    <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z"/>
+                  </svg>
+                }
+                @case ('custom') {
+                  <svg viewBox="0 0 24 24" width="18" height="18" focusable="false">
+                    <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M14.7 3.3a2.4 2.4 0 0 1 3.4 3.4L7 18l-5 1 1-5 11.7-10.7zM13 5l3 3"/>
+                  </svg>
+                }
+                @case ('fast') {
+                  <svg viewBox="0 0 24 24" width="18" height="18" focusable="false">
+                    <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M13 2 4 14h7l-2 8 9-12h-7l2-8z"/>
+                  </svg>
+                }
+              }
+            </span>
+            <span>{{ isGeorgian() ? f.ka : f.en }}</span>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <aside
+      class="hero__categories"
+      [attr.aria-label]="isGeorgian() ? 'პოპულარული კატეგორიები' : 'Popular categories'"
+    >
+      <p class="cat-label">
+        <span class="cat-label__pulse" aria-hidden="true"></span>
+        {{ isGeorgian() ? 'პოპულარული კატეგორიები' : 'Popular categories' }}
+      </p>
+      <ul class="cat-list">
+        @for (cat of topCategories; track trackCategory($index, cat); let i = $index) {
+          <li class="cat-list__item" [style.--i]="i">
+            <a class="cat-chip" routerLink="/products">
+              <span class="cat-chip__icon" aria-hidden="true">
+                <app-category-icon [category]="cat" [size]="22" />
+              </span>
+              <span class="cat-chip__label">{{ categoryLabel(cat) }}</span>
+              <svg class="cat-chip__arrow" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </li>
+        }
+      </ul>
+    </aside>
+  </div>
+
+  <ul class="hero__stats" [attr.aria-label]="isGeorgian() ? 'სტატისტიკა' : 'Quick stats'">
+    @for (s of stats; track s.value; let i = $index) {
+      <li class="stat" [style.--i]="i">
+        <strong>{{ s.value }}</strong>
+        <span>{{ isGeorgian() ? s.ka : s.en }}</span>
+      </li>
+    }
+  </ul>
+</section>

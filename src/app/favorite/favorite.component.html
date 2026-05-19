@@ -1,4 +1,4 @@
-<section class="pd">
+﻿<section class="pd">
   @if (product(); as p) {
     <article class="pd__wrap">
       <div class="pd__media">
@@ -8,29 +8,29 @@
         </picture>
       </div>
       <div class="pd__body">
-        <p class="pd__crumbs"><a routerLink="/">მთავარი</a> <span aria-hidden="true">/</span> <span>{{ p.category }}</span></p>
+        <p class="pd__crumbs"><a routerLink="/">Home</a> <span aria-hidden="true">/</span> <span>{{ p.category }}</span></p>
         <h1 class="pd__title">{{ p.name }}</h1>
-        <p class="pd__code">კოდი: <strong>{{ p.code }}</strong></p>
+        <p class="pd__code">Code: <strong>{{ p.code }}</strong></p>
         <p class="pd__desc">{{ descriptionText() }}</p>
 
         <dl class="specs">
-          <div class="specs__row"><dt>ძაბვა</dt><dd>{{ p.volt }} V</dd></div>
-          <div class="specs__row"><dt>სიმძლავრე</dt><dd>{{ p.watt }} W</dd></div>
-          <div class="specs__row"><dt>სიგრძე</dt><dd>{{ p.length }} მმ</dd></div>
-          <div class="specs__row"><dt>სიგანე</dt><dd>{{ p.width }} მმ</dd></div>
-          <div class="specs__row"><dt>დიამეტრი</dt><dd>Ø {{ p.diameter }} მმ</dd></div>
+          <div class="specs__row"><dt>Voltage</dt><dd>{{ p.volt }} V</dd></div>
+          <div class="specs__row"><dt>Power</dt><dd>{{ p.watt }} W</dd></div>
+          <div class="specs__row"><dt>Length</dt><dd>{{ p.length }} mm</dd></div>
+          <div class="specs__row"><dt>Width</dt><dd>{{ p.width }} mm</dd></div>
+          <div class="specs__row"><dt>Diameter</dt><dd>Ø {{ p.diameter }} mm</dd></div>
         </dl>
 
         <div class="pd__actions">
-          <a class="btn btn--primary" href="tel:+995593268984"><span aria-hidden="true">☎</span> შეკვეთა</a>
+          <a class="btn btn--primary" href="tel:+995593268984"><span aria-hidden="true">☎</span> Order</a>
           <a class="btn btn--ghost" href="https://api.whatsapp.com/send?phone=995593268984" target="_blank" rel="noopener"><span aria-hidden="true">✆</span> WhatsApp</a>
         </div>
       </div>
     </article>
   } @else {
     <div class="pd__missing">
-      <h1>პროდუქცია არ მოიძებნა</h1>
-      <p>მოთხოვნილი ID არ არსებობს. <a routerLink="/">დაბრუნდი მთავარზე →</a></p>
+      <h1>Product not found</h1>
+      <p>The requested ID does not exist. <a routerLink="/">Back to home →</a></p>
     </div>
   }
 </section>

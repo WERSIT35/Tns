@@ -6,20 +6,20 @@
   --color-brand-soft: #f3c9bc;
   --color-brand-tint: #fff4ee;
 
-  --color-ink: #151515;
-  --color-ink-2: #1f1f1f;
-  --color-ink-3: #353535;
-  --color-mute: #707070;
-  --color-mute-2: #919191;
+  --color-ink: #0f0f10;
+  --color-ink-2: #1d1d20;
+  --color-ink-3: #2f2f33;
+  --color-mute: #5a5a60;
+  --color-mute-2: #7a7a82;
 
-  --color-line: #e3e3e3;
-  --color-line-2: #d3d3d3;
+  --color-line: #e3e3e6;
+  --color-line-2: #cdcdd2;
 
   --color-surface: #ffffff;
-  --color-surface-2: #f7f7f5;
-  --color-bg: #fafaf8;
+  --color-surface-2: #f3f3ef;
+  --color-bg: #f7f7f3;
   --color-white: #ffffff;
-  --color-overlay: rgba(0, 0, 0, 0.45);
+  --color-overlay: rgba(0, 0, 0, 0.65);
 
   --space-1: 4px;
   --space-2: 8px;
@@ -42,20 +42,22 @@
 
   --font-display: 'Reddit Mono', 'ALK Sanet', system-ui, sans-serif;
   --font-body: 'Reddit Mono', system-ui, sans-serif;
-  --fs-xs: 12px;
-  --fs-sm: 14px;
+  --fs-xs: 13px;
+  --fs-sm: 15px;
   --fs-base: 16px;
   --fs-md: 18px;
   --fs-lg: 22px;
-  --fs-xl: 28px;
-  --fs-2xl: 36px;
-  --fs-3xl: 48px;
-  --lh-tight: 1.2;
-  --lh-base: 1.5;
+  --fs-xl: 30px;
+  --fs-2xl: 40px;
+  --fs-3xl: 56px;
+  --lh-tight: 1.15;
+  --lh-snug: 1.3;
+  --lh-base: 1.55;
 
   --container: 1200px;
-  --header-h: 72px;
-  --header-h-mobile: 60px;
+  --header-h: 80px;
+  --header-h-mobile: 64px;
+  --utility-h: 40px;
 
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --t-fast: 120ms;

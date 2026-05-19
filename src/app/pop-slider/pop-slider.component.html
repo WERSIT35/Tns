@@ -1,9 +1,9 @@
-<section #slider class="splide pop-slider" aria-label="Featured products">
+﻿<section #slider class="splide pop-slider" aria-label="Featured products">
   <div class="splide__track">
     <ul class="splide__list">
       @for (item of popularList; track item.id) {
         <li class="splide__slide">
-          <a class="card" [routerLink]="['/favorite', item.id]" [attr.aria-label]="item.code + ' — ' + item.category">
+          <a class="card" [routerLink]="['/favorite', item.id]" [attr.aria-label]="item.code + ' — ' + categoryLabel(item.category)">
             <div class="card__media">
               <picture>
                 <source [srcset]="item.imageWebp" type="image/webp" />
@@ -12,7 +12,7 @@
             </div>
             <div class="card__body">
               <p class="card__code">{{ item.code }}</p>
-              <p class="card__title">{{ item.category }}</p>
+              <p class="card__title">{{ title(item) }}</p>
             </div>
           </a>
         </li>

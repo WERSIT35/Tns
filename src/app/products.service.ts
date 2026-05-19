@@ -46,4 +46,19 @@ export class ProductsService {
   getByCategory(category: string): readonly DisplayProduct[] {
     return this.byCategory.get(category) ?? [];
   }
+
+  getSimilar(
+    excludeId: number,
+    category: string,
+    limit = 12,
+  ): readonly DisplayProduct[] {
+    const pool = this.getByCategory(category);
+    const out: DisplayProduct[] = [];
+    for (const p of pool) {
+      if (p.id === excludeId) continue;
+      out.push(p);
+      if (out.length >= limit) break;
+    }
+    return out;
+  }
 }
