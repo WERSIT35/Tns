@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /private/
+Allow: /
+Sitemap: https://heatflow.netlify.app/assets/sitemap.xml
+
+

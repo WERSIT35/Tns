@@ -1,7 +1,6 @@
 {
   "routes": [
     "/",
-    "/add-item",
     "/contact",
     "/products"
   ]
