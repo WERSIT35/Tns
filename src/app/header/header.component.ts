@@ -6,10 +6,9 @@ import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-header',
-    standalone: true,
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
-    imports: [CommonModule,RouterModule]
+    imports: [CommonModule, RouterModule]
 })
 export class HeaderComponent{
   isGeorgian: boolean;

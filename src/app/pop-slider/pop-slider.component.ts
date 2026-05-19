@@ -7,11 +7,10 @@ import { RouterLink } from '@angular/router';
 import '@splidejs/splide/css';
 
 @Component({
-  selector: 'app-pop-slider',
-  standalone: true,
-  imports: [CommonModule,RouterLink],
-  templateUrl: './pop-slider.component.html',
-  styleUrl: './pop-slider.component.scss'
+    selector: 'app-pop-slider',
+    imports: [CommonModule, RouterLink],
+    templateUrl: './pop-slider.component.html',
+    styleUrl: './pop-slider.component.scss'
 })
 export class PopSliderComponent{
   @Input() popular!: Popular;

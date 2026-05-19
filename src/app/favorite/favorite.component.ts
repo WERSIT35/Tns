@@ -5,11 +5,10 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-favorite',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './favorite.component.html',
-  styleUrl: './favorite.component.scss'
+    selector: 'app-favorite',
+    imports: [CommonModule],
+    templateUrl: './favorite.component.html',
+    styleUrl: './favorite.component.scss'
 })
 export class FavoriteComponent {
    route: ActivatedRoute = inject(ActivatedRoute);

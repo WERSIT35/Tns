@@ -7,12 +7,11 @@ import { TranslateService } from './translate.service';
 import { SeoService } from './seo.service';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    imports: [RouterOutlet, HeaderComponent, FooterComponent],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   private readonly homeService = inject(HomeService);

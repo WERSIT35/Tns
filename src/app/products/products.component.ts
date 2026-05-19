@@ -8,11 +8,10 @@ import { TranslateService } from '../translate.service';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-products',
-  standalone: true,
-  imports: [RouterModule,CommonModule],
-  templateUrl: './products.component.html',
-  styleUrl: './products.component.scss'
+    selector: 'app-products',
+    imports: [RouterModule, CommonModule],
+    templateUrl: './products.component.html',
+    styleUrl: './products.component.scss'
 })
 export class ProductsComponent {
   @Input() categories!: Home;

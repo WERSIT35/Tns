@@ -5,11 +5,10 @@ import { Item } from '../home/home';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-product-dt',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './product-dt.component.html',
-  styleUrl: './product-dt.component.scss'
+    selector: 'app-product-dt',
+    imports: [CommonModule],
+    templateUrl: './product-dt.component.html',
+    styleUrl: './product-dt.component.scss'
 })
 export class ProductDtComponent {
   route:ActivatedRoute =inject(ActivatedRoute);
