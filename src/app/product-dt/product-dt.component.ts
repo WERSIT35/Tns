@@ -66,11 +66,11 @@ export class ProductDtComponent {
 
   private syncSeo(p: DisplayProduct | undefined): void {
     if (!p) return;
-    const url = `https://heatflow.netlify.app/product-dt/${p.id}`;
+    const url = `https://tns-khaki.vercel.app/product-dt/${p.id}`;
     this.seo.update({
       title: `${p.name} (${p.code}) | ${p.category} | Tenebi`,
       description: `${p.name} ${p.code} — ${p.volt}V / ${p.watt}W, ${p.length}×${p.width} mm, Ø${p.diameter} mm.`,
-      image: `https://heatflow.netlify.app/${p.image}`,
+      image: `https://tns-khaki.vercel.app/${p.image}`,
       url,
       type: 'product',
       jsonLd: {
@@ -80,7 +80,7 @@ export class ProductDtComponent {
         sku: p.code,
         category: p.category,
         description: this.descriptionText(),
-        image: `https://heatflow.netlify.app/${p.image}`,
+        image: `https://tns-khaki.vercel.app/${p.image}`,
         brand: { '@type': 'Brand', name: 'Tenebi' },
       },
     });

@@ -12,7 +12,7 @@ export function app(): express.Express {
   const browserDistFolder = resolve(serverDistFolder, '../browser');
   const indexHtml = join(serverDistFolder, 'index.server.html');
 
-  const allowedHosts = (process.env['ALLOWED_HOSTS'] ?? 'localhost,heatflow.netlify.app')
+  const allowedHosts = (process.env['ALLOWED_HOSTS'] ?? 'localhost,tns-khaki.vercel.app')
     .split(',')
     .map((s) => s.trim());
   const commonEngine = new CommonEngine({ allowedHosts });
@@ -24,7 +24,8 @@ export function app(): express.Express {
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
   server.get('*.*', express.static(browserDistFolder, {
-    maxAge: '1y'
+    maxAge: '1y',
+    immutable: true,
   }));
 
   // All regular routes use the Angular engine

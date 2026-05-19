@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: /private/
+Disallow: /favorite/
 Allow: /
-Sitemap: https://heatflow.netlify.app/assets/sitemap.xml
+Sitemap: https://tns-khaki.vercel.app/assets/sitemap.xml
 
 

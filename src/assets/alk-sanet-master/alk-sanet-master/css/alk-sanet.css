@@ -6,4 +6,5 @@
          url('../fonts/alk-sanet-webfont.woff') format('woff'), /* Pretty Modern Browsers */
          url('../fonts/alk-sanet-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
          url('../fonts/alk-sanet-webfont.svg#alk_sanetregular') format('svg'); /* Legacy iOS */
+    font-display: swap;
 }

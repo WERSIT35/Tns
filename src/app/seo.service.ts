@@ -9,10 +9,11 @@ export interface SeoMeta {
   image?: string;
   url?: string;
   type?: 'website' | 'article' | 'product';
+  robots?: string;
   jsonLd?: Record<string, unknown>;
 }
 
-const SITE_URL = 'https://heatflow.netlify.app';
+const SITE_URL = 'https://tns-khaki.vercel.app';
 const SITE_NAME = 'Tenebi | HeatFlow';
 const DEFAULT_IMAGE = `${SITE_URL}/assets/banner.png`;
 
@@ -54,10 +55,13 @@ export class SeoService {
     this.upsert('twitter:title', meta.title);
     this.upsert('twitter:description', meta.description);
     this.upsert('twitter:image', ogImage);
+    this.upsert('robots', meta.robots ?? 'index,follow,max-image-preview:large');
 
     this.setCanonical(ogUrl);
     if (meta.jsonLd) {
       this.setJsonLd(meta.jsonLd);
+    } else {
+      this.clearJsonLd();
     }
   }
 
@@ -91,5 +95,12 @@ export class SeoService {
       this.doc.head.appendChild(script);
     }
     script.textContent = JSON.stringify(data);
+  }
+
+  private clearJsonLd(): void {
+    const script = this.doc.getElementById('app-jsonld');
+    if (script?.parentNode) {
+      script.parentNode.removeChild(script);
+    }
   }
 }

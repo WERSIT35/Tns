@@ -1,8 +1,8 @@
 <footer class="site-footer">
   <div class="site-footer__top">
     <div class="col col--brand">
-      <a class="brand" routerLink="/">
-        <img src="assets/logos/fullWhiteEN.png" alt="" width="160" height="44" />
+      <a class="brand" routerLink="/" [attr.aria-label]="isGeorgian() ? 'ტენების მთავარი გვერდი' : 'Tenebi home'">
+        <img src="assets/logos/fullWhiteEN.png" [attr.alt]="isGeorgian() ? 'ტენები ლოგო' : 'Tenebi logo'" width="160" height="44" />
       </a>
       <p class="tagline">{{ isGeorgian() ? 'უმაღლესი ხარისხის ტენები — ნებისმიერი მოწყობილობისთვის.' : 'Premium tubular heating elements for any appliance.' }}</p>
       <ul class="social" aria-label="Social links">

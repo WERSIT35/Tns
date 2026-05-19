@@ -25,7 +25,9 @@
       "Bash(curl -s -o /tmp/pdt.html -w \"HTTP:%{http_code} size:%{size_download}\\\\n\" http://localhost:4100/product-dt/1)",
       "Bash(curl *)",
       "Bash(SSR_PORT=4101 node *)",
-      "Bash(SSR_PORT=4102 node *)"
+      "Bash(SSR_PORT=4102 node *)",
+      "Bash(npm run *)",
+      "Bash(SSR_PORT=4110 node *)"
     ]
   }
 }

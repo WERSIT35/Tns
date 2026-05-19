@@ -1,5 +1,17 @@
 @use '@splidejs/splide/css';
 
+@font-face {
+  font-family: 'ALK Sanet';
+  src: url('/assets/alk-sanet-master/alk-sanet-master/fonts/alk-sanet-webfont.eot');
+  src:
+    url('/assets/alk-sanet-master/alk-sanet-master/fonts/alk-sanet-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/assets/alk-sanet-master/alk-sanet-master/fonts/alk-sanet-webfont.woff2') format('woff2'),
+    url('/assets/alk-sanet-master/alk-sanet-master/fonts/alk-sanet-webfont.woff') format('woff'),
+    url('/assets/alk-sanet-master/alk-sanet-master/fonts/alk-sanet-webfont.ttf') format('truetype'),
+    url('/assets/alk-sanet-master/alk-sanet-master/fonts/alk-sanet-webfont.svg#alk_sanetregular') format('svg');
+  font-display: swap;
+}
+
 :root {
   --color-brand: #e0582e;
   --color-brand-dark: #b43008;
@@ -9,8 +21,8 @@
   --color-ink: #0f0f10;
   --color-ink-2: #1d1d20;
   --color-ink-3: #2f2f33;
-  --color-mute: #5a5a60;
-  --color-mute-2: #7a7a82;
+  --color-mute: #45454d;
+  --color-mute-2: #5f5f68;
 
   --color-line: #e3e3e6;
   --color-line-2: #cdcdd2;

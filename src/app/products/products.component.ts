@@ -40,7 +40,7 @@ export class ProductsComponent {
       title: 'პროდუქცია | ტენები | Tenebi',
       description:
         'სრული კატალოგი — ღუმელის, ტოსტერის, გრილის, ყავის, თერმოსტატის, სამრეწველო, წყლის და ვენტილაციის ტენები.',
-      url: 'https://heatflow.netlify.app/products',
+      url: 'https://tns-khaki.vercel.app/products',
       type: 'website',
     });
   }

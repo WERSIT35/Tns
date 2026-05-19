@@ -31,7 +31,7 @@ export class ContactComponent {
     this.seo.update({
       title: 'კონტაქტი | ტენები | Tenebi',
       description: 'დაგვიკავშირდით — ელიავას ბაზრობა, მაღაზია N157, +995 593 268 984.',
-      url: 'https://heatflow.netlify.app/contact',
+      url: 'https://tns-khaki.vercel.app/contact',
       type: 'website',
     });
   }

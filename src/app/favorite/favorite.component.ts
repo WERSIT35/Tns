@@ -11,6 +11,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs/operators';
 import { ProductsService } from '../products.service';
 import { DisplayProduct } from '../data/types';
+import { SeoService } from '../seo.service';
 
 @Component({
   selector: 'app-favorite',
@@ -22,6 +23,7 @@ import { DisplayProduct } from '../data/types';
 export class FavoriteComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly productsSvc = inject(ProductsService);
+  private readonly seo = inject(SeoService);
 
   private readonly id = toSignal(
     this.route.paramMap.pipe(map((p) => Number(p.get('id')))),
@@ -39,4 +41,14 @@ export class FavoriteComponent {
       .replaceAll('{{volt}}', String(p.volt))
       .replaceAll('{{watt}}', String(p.watt));
   });
+
+  constructor() {
+    this.seo.update({
+      title: 'Featured Product | Tenebi',
+      description: 'Featured product preview from Tenebi catalog.',
+      url: 'https://tns-khaki.vercel.app/',
+      type: 'website',
+      robots: 'noindex,follow',
+    });
+  }
 }
