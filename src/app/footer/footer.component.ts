@@ -1,24 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { map } from 'rxjs/operators';
 import { TranslateService } from '../translate.service';
-import { RouterModule } from '@angular/router';
 
 @Component({
-    selector: 'app-footer',
-    imports: [RouterModule],
-    templateUrl: './footer.component.html',
-    styleUrl: './footer.component.scss'
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrl: './footer.component.scss',
+  imports: [RouterLink],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FooterComponent implements OnInit{
-  isGeorgian: boolean;
-
-  constructor(private translateService: TranslateService) {
-    this.isGeorgian = false; // Default value
-  }
-
-  ngOnInit(): void {
-    this.translateService.currentLanguage$.subscribe(language => {
-      this.isGeorgian = language === 'ka';
-      console.log(`Current language is ${language}, isGeorgian: ${this.isGeorgian}`);
-    });
-  }
+export class FooterComponent {
+  private readonly translate = inject(TranslateService);
+  readonly isGeorgian = toSignal(
+    this.translate.currentLanguage$.pipe(map((l) => l === 'ka')),
+    { initialValue: true },
+  );
+  readonly year = new Date().getFullYear();
 }

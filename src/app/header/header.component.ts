@@ -1,36 +1,52 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  Output,
+  EventEmitter,
+  inject,
+  signal,
+} from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Router, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { TranslateService } from '../translate.service';
 
-import { HomeService } from '../home.service';
-import { RouterModule } from '@angular/router';
-
 @Component({
-    selector: 'app-header',
-    templateUrl: './header.component.html',
-    styleUrl: './header.component.scss',
-    imports: [RouterModule]
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss',
+  imports: [RouterLink, RouterLinkActive],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent{
-  isGeorgian: boolean;
+export class HeaderComponent {
+  private readonly translate = inject(TranslateService);
+  private readonly router = inject(Router);
+  private readonly destroyRef = inject(DestroyRef);
+
+  readonly isGeorgian = signal(true);
+  readonly menuOpen = signal(false);
 
   @Output() languageChanged = new EventEmitter<string>();
 
-  constructor(private translateService: TranslateService,private homeService: HomeService) {
-    this.isGeorgian = false;
-  }
+  constructor() {
+    this.translate.currentLanguage$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((lang) => this.isGeorgian.set(lang === 'ka'));
 
-  ngOnInit(): void {
-    this.translateService.currentLanguage$.subscribe(language => {
-      this.isGeorgian = language === 'ka';
-    });
+    this.router.events
+      .pipe(
+        filter((e): e is NavigationEnd => e instanceof NavigationEnd),
+        takeUntilDestroyed(this.destroyRef),
+      )
+      .subscribe(() => this.menuOpen.set(false));
   }
 
   toggleLanguage(): void {
-    const newLang = this.getCurrentLanguage() === 'en' ? 'ka' : 'en';
-    this.languageChanged.emit(newLang);
+    this.languageChanged.emit(this.isGeorgian() ? 'en' : 'ka');
   }
 
-  private getCurrentLanguage(): string {
-    return this.isGeorgian ? 'ka' : 'en';
+  toggleMenu(): void {
+    this.menuOpen.update((v) => !v);
   }
 }

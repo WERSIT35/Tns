@@ -1,19 +1,33 @@
-h1,h2,h3,h4,h5,h6,p,span,a{
-  &:lang(ka) {
-    font-family: "ALK Sanet", sans-serif;
+.section {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-4);
+
+  &--featured {
+    padding-top: var(--space-7);
   }
-  &:lang(en) {
-    font-family: "Reddit Mono", monospace;
+
+  &__head {
+    margin-bottom: var(--space-5);
   }
 }
-.popular{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 3%;
-  color: var(--base-color);
-  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: var(--fs-xs);
+  color: var(--color-brand);
   font-weight: 700;
-  // -webkit-text-stroke:0.5px var(--top-color);
+  margin-bottom: 4px;
+}
+
+h2 {
+  font-size: clamp(24px, 3.2vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+
+@media (max-width: 600px) {
+  .section { padding: var(--space-6) var(--space-4); }
 }

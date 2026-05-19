@@ -1,42 +1,48 @@
-import { AfterViewInit, Component, Inject, Input, PLATFORM_ID } from '@angular/core';
-import { Popular } from '../popular';
-import { HomeService } from '../home.service';
-import Splide from '@splidejs/splide';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  PLATFORM_ID,
+  ViewChild,
+  inject,
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import '@splidejs/splide/css';
+import { ProductsService } from '../products.service';
+import { DisplayProduct } from '../data/types';
 
 @Component({
-    selector: 'app-pop-slider',
-    imports: [RouterLink],
-    templateUrl: './pop-slider.component.html',
-    styleUrl: './pop-slider.component.scss'
+  selector: 'app-pop-slider',
+  imports: [RouterLink],
+  templateUrl: './pop-slider.component.html',
+  styleUrl: './pop-slider.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PopSliderComponent{
-  @Input() popular!: Popular;
-  popularList: Popular[] = [];
+export class PopSliderComponent implements AfterViewInit {
+  private readonly products = inject(ProductsService);
+  private readonly platformId = inject(PLATFORM_ID);
 
-  constructor(
-    private homeService: HomeService,
-    @Inject(PLATFORM_ID) private platformId: any
-  ) {}
+  @ViewChild('slider', { static: true }) sliderRef!: ElementRef<HTMLElement>;
 
-  ngOnInit(): void {
-    this.popularList = this.homeService.getAllPopularList();
-  }
+  readonly popularList: readonly DisplayProduct[] = this.products.getFeatured();
 
-  ngAfterViewInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      const splide = new Splide('.splide', {
-        type: 'loop',
-        perPage: 3,
-        focus: 'center',
-        pauseOnHover: false,
-        pagination: false,
-        autoplay:true
-      });
-
-      splide.mount();
-    }
+  async ngAfterViewInit(): Promise<void> {
+    if (!isPlatformBrowser(this.platformId)) return;
+    const { default: Splide } = await import('@splidejs/splide');
+    new Splide(this.sliderRef.nativeElement, {
+      type: 'loop',
+      perPage: 4,
+      pauseOnHover: false,
+      pagination: false,
+      autoplay: true,
+      arrows: true,
+      gap: '1rem',
+      breakpoints: {
+        1100: { perPage: 3 },
+        780: { perPage: 2 },
+        520: { perPage: 1 },
+      },
+    }).mount();
   }
 }

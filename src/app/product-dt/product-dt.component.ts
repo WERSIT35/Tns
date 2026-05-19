@@ -1,29 +1,69 @@
-import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { HomeService } from '../home.service';
-import { Item } from '../home/home';
-
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  inject,
+} from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { map } from 'rxjs/operators';
+import { ProductsService } from '../products.service';
+import { SeoService } from '../seo.service';
+import { DisplayProduct } from '../data/types';
 
 @Component({
-    selector: 'app-product-dt',
-    imports: [],
-    templateUrl: './product-dt.component.html',
-    styleUrl: './product-dt.component.scss'
+  selector: 'app-product-dt',
+  imports: [RouterLink],
+  templateUrl: './product-dt.component.html',
+  styleUrl: './product-dt.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductDtComponent {
-  route:ActivatedRoute =inject(ActivatedRoute);
-  teniID=0;
+  private readonly route = inject(ActivatedRoute);
+  private readonly productsSvc = inject(ProductsService);
+  private readonly seo = inject(SeoService);
 
-  homeService=inject(HomeService);
-  teni:Item |undefined;
+  private readonly id = toSignal(
+    this.route.paramMap.pipe(map((p) => Number(p.get('id')))),
+    { initialValue: Number(this.route.snapshot.paramMap.get('id')) },
+  );
 
-  constructor(){
-    const teniID = Number(this.route.snapshot.params['id']);
-    this.teni=this.homeService.getAllCategoryId(teniID);
+  readonly product = computed<DisplayProduct | undefined>(() =>
+    this.productsSvc.getProductById(this.id()),
+  );
+
+  readonly descriptionText = computed(() => {
+    const p = this.product();
+    if (!p) return '';
+    return p.description
+      .replaceAll('{{volt}}', String(p.volt))
+      .replaceAll('{{watt}}', String(p.watt));
+  });
+
+  constructor() {
+    effect(() => this.syncSeo(this.product()));
   }
-  protected formatDescription(description: string, item: Item): string {
-    return description
-      .replace(/{{volt}}/g, item.volt.toString())
-      .replace(/{{watt}}/g, item.watt.toString());
+
+  private syncSeo(p: DisplayProduct | undefined): void {
+    if (!p) return;
+    const url = `https://heatflow.netlify.app/product-dt/${p.id}`;
+    this.seo.update({
+      title: `${p.name} (${p.code}) | ${p.category} | Tenebi`,
+      description: `${p.name} ${p.code} — ${p.volt}V / ${p.watt}W, ${p.length}×${p.width} mm, Ø${p.diameter} mm.`,
+      image: `https://heatflow.netlify.app/${p.image}`,
+      url,
+      type: 'product',
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        name: p.name,
+        sku: p.code,
+        category: p.category,
+        description: this.descriptionText(),
+        image: `https://heatflow.netlify.app/${p.image}`,
+        brand: { '@type': 'Brand', name: 'Tenebi' },
+      },
+    });
   }
 }

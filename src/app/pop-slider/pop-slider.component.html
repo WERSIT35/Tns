@@ -1,14 +1,22 @@
-<section id="section" class="splide" aria-label="Splide Basic HTML Example">
+<section #slider class="splide pop-slider" aria-label="Featured products">
   <div class="splide__track">
     <ul class="splide__list">
-      @for (item of popularList; track item) {
+      @for (item of popularList; track item.id) {
         <li class="splide__slide">
-          <a [routerLink]="['/favorite', item.id]"
-            ><img [src]="item.image" alt="" />
-            <p>{{ item.code }}</p></a
-            >
-          </li>
-        }
-      </ul>
-    </div>
-  </section>
+          <a class="card" [routerLink]="['/favorite', item.id]" [attr.aria-label]="item.code + ' — ' + item.category">
+            <div class="card__media">
+              <picture>
+                <source [srcset]="item.imageWebp" type="image/webp" />
+                <img [src]="item.image" alt="" loading="lazy" decoding="async" width="400" height="400" />
+              </picture>
+            </div>
+            <div class="card__body">
+              <p class="card__code">{{ item.code }}</p>
+              <p class="card__title">{{ item.category }}</p>
+            </div>
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

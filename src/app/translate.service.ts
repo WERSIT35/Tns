@@ -1,29 +1,20 @@
+import { DOCUMENT, Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class TranslateService {
-  private currentLanguageSubject: BehaviorSubject<string>;
-  public currentLanguage$: Observable<string>;
-  private isBrowser: boolean;
+  private readonly platformId = inject(PLATFORM_ID);
+  private readonly doc = inject(DOCUMENT);
+  private readonly isBrowser = isPlatformBrowser(this.platformId);
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    this.isBrowser = isPlatformBrowser(this.platformId);
-    const defaultLanguage = 'ka';
-    this.currentLanguageSubject = new BehaviorSubject<string>(defaultLanguage);
-    this.currentLanguage$ = this.currentLanguageSubject.asObservable();
-    if (this.isBrowser) {
-      this.setLanguage(defaultLanguage);
-    }
-  }
+  private readonly currentLanguageSubject = new BehaviorSubject<string>('ka');
+  readonly currentLanguage$: Observable<string> =
+    this.currentLanguageSubject.asObservable();
 
   setLanguage(language: string): void {
     if (this.isBrowser) {
-      console.log(`Setting language to: ${language}`);
-      document.documentElement.lang = language;
+      this.doc.documentElement.lang = language;
     }
     this.currentLanguageSubject.next(language);
   }

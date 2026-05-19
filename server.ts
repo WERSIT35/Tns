@@ -12,7 +12,10 @@ export function app(): express.Express {
   const browserDistFolder = resolve(serverDistFolder, '../browser');
   const indexHtml = join(serverDistFolder, 'index.server.html');
 
-  const commonEngine = new CommonEngine();
+  const allowedHosts = (process.env['ALLOWED_HOSTS'] ?? 'localhost,heatflow.netlify.app')
+    .split(',')
+    .map((s) => s.trim());
+  const commonEngine = new CommonEngine({ allowedHosts });
 
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
@@ -28,6 +31,11 @@ export function app(): express.Express {
   server.get('*', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
 
+    const host = (headers.host ?? '').split(':')[0];
+    if (!allowedHosts.includes(host)) {
+      res.status(400).send('Bad Request');
+      return;
+    }
     commonEngine
       .render({
         bootstrap,

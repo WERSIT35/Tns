@@ -1,38 +1,43 @@
-<main>
-  <section>
-    <ul>
-      @for (category of categoriesList[0].categorys; track category; let i = $index) {
-        <li
-          (click)="categoryChange(i)"
-          [class.selected]="selectedCategoryIndex === i"
-          >
-          {{ category }}
+<div class="products">
+  <nav class="tabs" aria-label="Product categories">
+    @for (category of categories; track category; let i = $index) {
+      <button
+        type="button"
+        class="tab"
+        [class.is-active]="selectedIndex() === i"
+        [attr.aria-pressed]="selectedIndex() === i"
+        (click)="selectCategory(i)">
+        {{ category }}
+      </button>
+    }
+  </nav>
+
+  @if (selectedItems().length > 0) {
+    <ul class="grid">
+      @for (item of selectedItems(); track trackById($index, item)) {
+        <li class="grid__item">
+          <a class="card" [routerLink]="['/product-dt', item.id]" [attr.aria-label]="item.name + ' ' + item.code">
+            <div class="card__media">
+              <picture>
+                <source [srcset]="item.imageWebp" type="image/webp" />
+                <img [src]="item.image" alt="" loading="lazy" decoding="async" width="400" height="400" />
+              </picture>
+            </div>
+            <div class="card__body">
+              <p class="card__code">{{ item.code }}</p>
+              <h3 class="card__title">{{ item.name }}</h3>
+              <ul class="card__specs" aria-label="Specifications">
+                <li>{{ item.volt }}V · {{ item.watt }}W</li>
+                <li>{{ item.length }}×{{ item.width }} მმ</li>
+                <li>Ø {{ item.diameter }} მმ</li>
+              </ul>
+              <span class="card__cta">დეტალები →</span>
+            </div>
+          </a>
         </li>
       }
     </ul>
-  </section>
-  @if (selectedItems.length > 0) {
-    <div class="seccontainer">
-      <ul class="grid-container">
-        @for (item of selectedItems; track item) {
-          <li class="grid-item">
-            <a [routerLink]="['/product-dt', item.id]">
-              <img [src]="item.image" [alt]="item.name" />
-              <div class="txt">
-                <h4>{{ item.name }}</h4>
-                <div class="spns">
-                  <span>{{item.volt}}V/{{item.watt}}W</span>
-                  <span>{{item.length}}მმ/{{item.width}}მმ</span>
-                  <span>{{item.diameter}}მმ</span>
-                </div>
-                <p class="code">{{item.code}}</p>
-                <!-- <p class="price">ფასი: {{ item.price }}.00₾</p> -->
-                <button>შეკვეთა</button>
-              </div>
-            </a>
-          </li>
-        }
-      </ul>
-    </div>
+  } @else {
+    <p class="empty">პროდუქცია არ მოიძებნა.</p>
   }
-</main>
+</div>

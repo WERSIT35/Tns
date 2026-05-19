@@ -1,1 +1,27 @@
-<div class="banner"><a href="tel:+995593268984"><img src="../../assets/banner.png" alt="Banner1"></a></div>
+<section class="hero" aria-labelledby="hero-title">
+  <picture class="hero__bg">
+    <source srcset="assets/banner.webp" type="image/webp" />
+    <img src="assets/banner.png" alt="" width="1600" height="600" fetchpriority="high" decoding="async" />
+  </picture>
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <p class="eyebrow">{{ isGeorgian() ? 'HeatFlow / Tenebi' : 'HeatFlow / Tenebi' }}</p>
+    <h1 id="hero-title">
+      {{ isGeorgian() ? 'უმაღლესი ხარისხის ტენები' : 'Premium tubular heating elements' }}
+    </h1>
+    <p class="hero__sub">
+      {{ isGeorgian()
+        ? 'ღუმელის, ტოსტერის, გრილის, სამრეწველო და სარეცხი მანქანის ტენები — საუკეთესო ხარისხი და სწრაფი მიწოდება.'
+        : 'Oven, toaster, grill, industrial and washing-machine heating elements — top quality, fast delivery.' }}
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" routerLink="/products">
+        {{ isGeorgian() ? 'პროდუქცია' : 'Browse products' }}
+      </a>
+      <a class="btn btn--ghost" href="tel:+995593268984">
+        <span aria-hidden="true">☎</span>
+        +995 593 268 984
+      </a>
+    </div>
+  </div>
+</section>

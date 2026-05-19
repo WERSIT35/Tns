@@ -1,23 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideRouter } from '@angular/router';
 import { PopSliderComponent } from './pop-slider.component';
 
 describe('PopSliderComponent', () => {
-  let component: PopSliderComponent;
   let fixture: ComponentFixture<PopSliderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PopSliderComponent]
-    })
-    .compileComponents();
-    
+      imports: [PopSliderComponent],
+      providers: [provideRouter([])],
+    }).compileComponents();
     fixture = TestBed.createComponent(PopSliderComponent);
-    component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('creates with featured items', () => {
+    expect(fixture.componentInstance).toBeTruthy();
+    expect(fixture.componentInstance.popularList.length).toBeGreaterThan(0);
   });
 });

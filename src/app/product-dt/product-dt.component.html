@@ -1,40 +1,36 @@
-<section>
-  @if (teni) {
-    <div class="partout">
-      <img [src]="teni.image" alt="{{ teni.name }}" />
-      <div class="part2">
-        <h1>{{ teni.name }}</h1>
-        <p class="descr">{{ formatDescription(teni.description, teni) }}</p>
-        <p>კატეგორია: {{ teni.category }}</p>
-        <p class="code">კოდი: {{ teni.code }}</p>
-        <!-- <p class="price">ფასი: {{ teni.price }}.00₾</p> -->
-        <div class="details">
-          <h2>დეტალები</h2>
-          <ul>
-            <li>
-              ძაბვა: <span> {{ teni.volt }} V </span>
-            </li>
-            <li>
-              სიმძლავრე: <span> {{ teni.watt }} W </span>
-            </li>
-            <li>
-              სიგრძე: <span> {{ teni.length }} მმ </span>
-            </li>
-            <li>
-              სიგანე: <span> {{ teni.width }} მმ </span>
-            </li>
-            <li>
-              მილის დიამეტრი: <span> {{ teni.diameter }} მმ </span>
-            </li>
-          </ul>
-        </div>
-        <a href="tel:+995593268984">შეკვეთა</a>
+<section class="pd">
+  @if (product(); as p) {
+    <article class="pd__wrap">
+      <div class="pd__media">
+        <picture>
+          <source [srcset]="p.imageWebp" type="image/webp" />
+          <img [src]="p.image" [alt]="p.name + ' ' + p.code" width="800" height="800" decoding="async" fetchpriority="high" />
+        </picture>
       </div>
+      <div class="pd__body">
+        <p class="pd__crumbs"><a routerLink="/products">პროდუქცია</a> <span aria-hidden="true">/</span> <span>{{ p.category }}</span></p>
+        <h1 class="pd__title">{{ p.name }}</h1>
+        <p class="pd__code">კოდი: <strong>{{ p.code }}</strong></p>
+        <p class="pd__desc">{{ descriptionText() }}</p>
+
+        <dl class="specs">
+          <div class="specs__row"><dt>ძაბვა</dt><dd>{{ p.volt }} V</dd></div>
+          <div class="specs__row"><dt>სიმძლავრე</dt><dd>{{ p.watt }} W</dd></div>
+          <div class="specs__row"><dt>სიგრძე</dt><dd>{{ p.length }} მმ</dd></div>
+          <div class="specs__row"><dt>სიგანე</dt><dd>{{ p.width }} მმ</dd></div>
+          <div class="specs__row"><dt>დიამეტრი</dt><dd>Ø {{ p.diameter }} მმ</dd></div>
+        </dl>
+
+        <div class="pd__actions">
+          <a class="btn btn--primary" href="tel:+995593268984"><span aria-hidden="true">☎</span> შეკვეთა</a>
+          <a class="btn btn--ghost" href="https://api.whatsapp.com/send?phone=995593268984" target="_blank" rel="noopener"><span aria-hidden="true">✆</span> WhatsApp</a>
+        </div>
+      </div>
+    </article>
+  } @else {
+    <div class="pd__missing">
+      <h1>პროდუქცია არ მოიძებნა</h1>
+      <p>მოთხოვნილი ID არ არსებობს. <a routerLink="/products">ნახეთ ყველა ტენი →</a></p>
     </div>
   }
 </section>
-@if (!teni) {
-  <div>
-    <p>Item not found.</p>
-  </div>
-}

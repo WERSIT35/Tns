@@ -13,7 +13,19 @@
       "Bash(git add *)",
       "Bash(git stash *)",
       "Bash(git commit *)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(grep -n \"categorysListEN\\\\|popularList\\\\|protected categorysList\\\\|^  ];$\\\\|^  ]$\" src/app/home.service.ts)",
+      "Bash(sed -n '27,344p' src/app/home.service.ts)",
+      "Bash(sed -n '351,731p' src/app/home.service.ts)",
+      "Read(//tmp/**)",
+      "Bash(SSR_PORT=4100 node dist/tenebi/server/server.mjs)",
+      "Bash(curl -s -o /tmp/home.html -w \"HTTP:%{http_code} size:%{size_download}\\\\n\" http://localhost:4100/)",
+      "Bash(curl -s -o /tmp/products.html -w \"HTTP:%{http_code} size:%{size_download}\\\\n\" http://localhost:4100/products)",
+      "Bash(curl -s -o /tmp/contact.html -w \"HTTP:%{http_code} size:%{size_download}\\\\n\" http://localhost:4100/contact)",
+      "Bash(curl -s -o /tmp/pdt.html -w \"HTTP:%{http_code} size:%{size_download}\\\\n\" http://localhost:4100/product-dt/1)",
+      "Bash(curl *)",
+      "Bash(SSR_PORT=4101 node *)",
+      "Bash(SSR_PORT=4102 node *)"
     ]
   }
 }

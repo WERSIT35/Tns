@@ -1,145 +1,46 @@
-<footer>
-  <div class="cont1">
-    <div class="cont11">
-      <div class="cont111">
-        <div class="cont1111">
-          <div class="cont11111">
-            <a href="https://maps.app.goo.gl/KgiLAGf66M6SAoiHA" target="_blank">
-              <i class="fa-solid fa-location-dot"></i>
-              <div class="sec">
-                <h4>{{ isGeorgian ? "მისამართი" : "Address" }}</h4>
-                <span>{{
-                  isGeorgian
-                    ? "ელიავას ბაზრობა, მაღაზია N157"
-                    : "Eliava Market, Shop N157"
-                }}</span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="cont1112">
-          <div class="cont11112">
-            <a href="tel:+995593268984" target="_blank">
-              <i class="fa-solid fa-phone"></i>
-              <div class="sec">
-                <h4>{{ isGeorgian ? "დაგვიკავშირდით" : "Contact Us" }}</h4>
-                <span>+995 593 268 984</span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="cont1113">
-          <div class="cont11113">
-            <a href="mailto:heatflow67@gmail.com" target="_blank">
-              <i class="fa-solid fa-envelope"></i>
-              <div class="sec">
-                <h4>{{ isGeorgian ? "ელ-ფოსტა" : "Email" }}</h4>
-                <span>
-                  heatflow67&commat;gmail.com
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <div class="col col--brand">
+      <a class="brand" routerLink="/">
+        <img src="assets/logos/fullWhiteEN.png" alt="" width="160" height="44" />
+      </a>
+      <p class="tagline">{{ isGeorgian() ? 'უმაღლესი ხარისხის ტენები — ნებისმიერი მოწყობილობისთვის.' : 'Premium tubular heating elements for any appliance.' }}</p>
+      <ul class="social" aria-label="Social links">
+        <li><a href="https://www.facebook.com/profile.php?id=61563439384878" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M13 22v-9h3l.5-4H13V6.5c0-1.1.3-1.9 2-1.9h2.1V1.1C16.8 1 15.5.9 14 .9 10.7.9 8.5 2.9 8.5 6.2V9H5v4h3.5v9H13z"/></svg></a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=995593268984" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11 11 0 0 0 3.5 17l-1.5 5 5.2-1.4A11 11 0 1 0 20.5 3.5zm-8.5 18a9 9 0 0 1-4.6-1.3l-.3-.2-3.1.8.8-3-.2-.3a9 9 0 1 1 7.4 4zm5-6.3c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a7.4 7.4 0 0 1-3.7-3.2c-.3-.5.3-.5.8-1.5.1-.2.1-.4 0-.6s-.7-1.7-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.7 1.2 3.1 1.3 3.3a8.9 8.9 0 0 0 3.4 3 11.7 11.7 0 0 0 2.2.8 5.4 5.4 0 0 0 2.4.1c.8-.1 1.8-.7 2-1.4s.3-1.3.2-1.4-.3-.2-.6-.3z"/></svg></a></li>
+        <li><a href="viber://call?number=+995593268984" target="_blank" rel="noopener" aria-label="Viber"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M11.4 0C5.8 0 1.4 2.6 1.4 8.1v.5C1.4 11 2.5 13 4.3 14.4l-.8 3.3 3.2-1.8c.9.2 1.8.3 2.7.3l.5.4c1.3 1.1 3 1.6 4.8 1.4l1.7-.2c3.3-.4 5.7-3.2 5.7-6.5v-.5C22.1 4.6 18 0 11.4 0zm0 1.6c5.5 0 9 4 9 9v.5c0 2.8-2 5.1-4.7 5.4l-1.7.2c-1.3.2-2.6-.2-3.7-1.1l-.6-.4a.8.8 0 0 0-.5-.2 11 11 0 0 1-2.4-.3.8.8 0 0 0-.6.1L4.6 15l.5-2a.8.8 0 0 0-.3-.9C3 11 2.9 9.4 2.9 8.6v-.5c0-4.4 3.6-6.5 8.5-6.5z"/></svg></a></li>
+      </ul>
     </div>
-    <div class="cont12">
-      <div class="cont121">
-        <div class="cont1211">
-          <div class="cont12111">
-            <div class="cont121111">
-              <a routerLink="">
-                <img src="assets/logos/fullWhiteEN.png" class="" alt="logo" />
-              </a>
-            </div>
-            <div class="cont121112">
-              <p>
-                <!-- {{ isGeorgian ? 'ქართული' : 'English' }} -->
-              </p>
-            </div>
-            <div class="cont121113">
-              <span>{{ isGeorgian ? "დაგვიკავშირდით" : "COntact Us" }}</span>
-              <a href="https://www.facebook.com" target="_blank"
-                ><i class="fa-brands fa-facebook"></i
-              ></a>
-              <a href="https://api.whatsapp.com/send?phone=995593268984"
-                ><i class="fa-brands fa-whatsapp"></i
-              ></a>
-              <a href="viber://call?number=+995593268984" target="_blank"
-                ><i class="fa-brands fa-viber"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="cont1212">
-          <div class="cont12121">
-            <div class="cont121211">
-              <h3>{{ isGeorgian ? "ნავიგაცია" : "Navigation" }}</h3>
-            </div>
-            <ul>
-              <li>
-                <a routerLink="">{{ isGeorgian ? "მთავარი" : "Home" }}</a>
-              </li>
-              <!-- <li><a href="#">{{ isGeorgian ? 'ჩვენს შესახებ' : 'About' }}</a></li> -->
-              <!-- <li><a href="#">{{ isGeorgian ? 'სერვისები' : 'Services' }}</a></li> -->
-              <!-- <li><a href="#">{{ isGeorgian ? 'პორტფოლიო' : 'Portfolio' }}</a></li> -->
-              <li>
-                <a routerLink="contact">{{
-                  isGeorgian ? "კონტაქტი" : "Contact"
-                }}</a>
-              </li>
-              <!-- <li><a href="#">{{ isGeorgian ? 'ჩვენს შესახებ' : 'About Us' }}</a></li> -->
-              <li>
-                <a routerLink="">{{
-                  isGeorgian ? "ჩვენი სერვისები" : "Our Services"
-                }}</a>
-              </li>
-              <!-- <li><a href="#">{{ isGeorgian ? 'ექსპერტთა გუნდი' : 'Expert Team' }}</a></li> -->
-              <!-- <li><a href="#">{{ isGeorgian ? 'კონტაქტი ჩვენთან' : 'Contact Us' }}</a></li> -->
-              <!-- <li><a href="#">{{ isGeorgian ? 'ბოლო სიახლეები' : 'Latest News' }}</a></li> -->
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+
+    <nav class="col col--nav" aria-label="{{ isGeorgian() ? 'ნავიგაცია' : 'Navigation' }}">
+      <h3>{{ isGeorgian() ? 'ნავიგაცია' : 'Navigation' }}</h3>
+      <ul>
+        <li><a routerLink="/">{{ isGeorgian() ? 'მთავარი' : 'Home' }}</a></li>
+        <li><a routerLink="/products">{{ isGeorgian() ? 'პროდუქცია' : 'Products' }}</a></li>
+        <li><a routerLink="/contact">{{ isGeorgian() ? 'კონტაქტი' : 'Contact' }}</a></li>
+      </ul>
+    </nav>
+
+    <address class="col col--contact" aria-label="{{ isGeorgian() ? 'კონტაქტი' : 'Contact' }}">
+      <h3>{{ isGeorgian() ? 'კონტაქტი' : 'Contact' }}</h3>
+      <ul>
+        <li>
+          <a href="https://maps.app.goo.gl/KgiLAGf66M6SAoiHA" target="_blank" rel="noopener">
+            <span aria-hidden="true">📍</span>
+            {{ isGeorgian() ? 'ელიავას ბაზრობა, მაღაზია N157' : 'Eliava Market, Shop N157' }}
+          </a>
+        </li>
+        <li>
+          <a href="tel:+995593268984"><span aria-hidden="true">☎</span> +995 593 268 984</a>
+        </li>
+        <li>
+          <a href="mailto:heatflowzaza@gmail.com"><span aria-hidden="true">✉</span> heatflowzaza&commat;gmail.com</a>
+        </li>
+      </ul>
+    </address>
   </div>
-  <div class="cont2">
-    <div class="cont21">
-      <div class="cont211">
-        <div class="cont2111">
-          <div class="cont21111">
-            <p>
-              Copyright &copy; 2024,
-              {{ isGeorgian ? "ყველა უფლება დაცულია" : "All Rights Reserved" }}
-            </p>
-          </div>
-        </div>
-        <div class="cont2112">
-          <div class="cont21121">
-            <ul>
-              <li>
-                <a routerLink="">{{ isGeorgian ? "მთავარი" : "Home" }}</a>
-              </li>
-              <li>
-                <a href="#">{{ isGeorgian ? "პირობები" : "Terms" }}</a>
-              </li>
-              <li>
-                <a href="#">{{
-                  isGeorgian ? "კონფიდენციალურობა" : "Privacy"
-                }}</a>
-              </li>
-              <li>
-                <a href="#">{{ isGeorgian ? "პოლიტიკა" : "Policy" }}</a>
-              </li>
-              <li>
-                <a routerLink="contact">{{
-                  isGeorgian ? "კონტაქტი" : "Contact"
-                }}</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+
+  <div class="site-footer__bottom">
+    <p>&copy; {{ year }} Tenebi · HeatFlow. {{ isGeorgian() ? 'ყველა უფლება დაცულია.' : 'All rights reserved.' }}</p>
   </div>
 </footer>

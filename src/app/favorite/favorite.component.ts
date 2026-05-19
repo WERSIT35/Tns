@@ -1,28 +1,42 @@
-import { Component, inject } from '@angular/core';
-import { HomeService } from '../home.service';
-import { Popular } from '../popular';
-import { ActivatedRoute } from '@angular/router';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+} from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
+
+import { toSignal } from '@angular/core/rxjs-interop';
+import { map } from 'rxjs/operators';
+import { ProductsService } from '../products.service';
+import { DisplayProduct } from '../data/types';
 
 @Component({
-    selector: 'app-favorite',
-    imports: [],
-    templateUrl: './favorite.component.html',
-    styleUrl: './favorite.component.scss'
+  selector: 'app-favorite',
+  imports: [RouterLink],
+  templateUrl: './favorite.component.html',
+  styleUrl: './favorite.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FavoriteComponent {
-   route: ActivatedRoute = inject(ActivatedRoute);
-  homeservice = inject(HomeService);
-  popular: Popular | undefined;
+  private readonly route = inject(ActivatedRoute);
+  private readonly productsSvc = inject(ProductsService);
 
-  constructor() {
-    const popularID = Number(this.route.snapshot.paramMap.get('id'));
-    this.popular = this.homeservice.getAllPopularId(popularID);
-  }
+  private readonly id = toSignal(
+    this.route.paramMap.pipe(map((p) => Number(p.get('id')))),
+    { initialValue: Number(this.route.snapshot.paramMap.get('id')) },
+  );
 
-  protected formatDescription(description: string, item: Popular): string {
-    return description
-      .replace(/{{volt}}/g, item.volt.toString())
-      .replace(/{{watt}}/g, item.watt.toString());
-  }
+  readonly product = computed<DisplayProduct | undefined>(() =>
+    this.productsSvc.getFeaturedById(this.id()),
+  );
+
+  readonly descriptionText = computed(() => {
+    const p = this.product();
+    if (!p) return '';
+    return p.description
+      .replaceAll('{{volt}}', String(p.volt))
+      .replaceAll('{{watt}}', String(p.watt));
+  });
 }
