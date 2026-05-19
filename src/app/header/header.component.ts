@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TranslateService } from '../translate.service';
-import { CommonModule } from '@angular/common';
+
 import { HomeService } from '../home.service';
 import { RouterModule } from '@angular/router';
 
@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss',
-    imports: [CommonModule, RouterModule]
+    imports: [RouterModule]
 })
 export class HeaderComponent{
   isGeorgian: boolean;

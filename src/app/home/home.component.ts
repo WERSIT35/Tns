@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { Home, Item } from './home';
 import { HomeService } from '../home.service';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
 import { TranslateService } from '../translate.service';
 import { Popular } from '../popular';
@@ -13,6 +13,6 @@ import { BannerComponent } from "../banner/banner.component";
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
-    imports: [CommonModule, RouterModule, ProductsComponent, PopSliderComponent, BannerComponent]
+    imports: [RouterModule, ProductsComponent, PopSliderComponent, BannerComponent]
 })
 export class HomeComponent{}

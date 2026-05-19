@@ -2,11 +2,11 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HomeService } from '../home.service';
 import { Item } from '../home/home';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     selector: 'app-product-dt',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './product-dt.component.html',
     styleUrl: './product-dt.component.scss'
 })

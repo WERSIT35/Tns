@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Home, Item } from '../home/home';
@@ -9,7 +9,7 @@ import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-products',
-    imports: [RouterModule, CommonModule],
+    imports: [RouterModule],
     templateUrl: './products.component.html',
     styleUrl: './products.component.scss'
 })

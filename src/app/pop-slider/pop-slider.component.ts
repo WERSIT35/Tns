@@ -2,13 +2,13 @@ import { AfterViewInit, Component, Inject, Input, PLATFORM_ID } from '@angular/c
 import { Popular } from '../popular';
 import { HomeService } from '../home.service';
 import Splide from '@splidejs/splide';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import '@splidejs/splide/css';
 
 @Component({
     selector: 'app-pop-slider',
-    imports: [CommonModule, RouterLink],
+    imports: [RouterLink],
     templateUrl: './pop-slider.component.html',
     styleUrl: './pop-slider.component.scss'
 })

@@ -2,11 +2,11 @@ import { Component, inject } from '@angular/core';
 import { HomeService } from '../home.service';
 import { Popular } from '../popular';
 import { ActivatedRoute } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     selector: 'app-favorite',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './favorite.component.html',
     styleUrl: './favorite.component.scss'
 })
