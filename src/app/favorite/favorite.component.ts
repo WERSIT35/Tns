@@ -12,6 +12,7 @@ import { map } from 'rxjs/operators';
 import { ProductsService } from '../products.service';
 import { DisplayProduct } from '../data/types';
 import { SeoService } from '../seo.service';
+import { TranslateService } from '../translate.service';
 
 @Component({
   selector: 'app-favorite',
@@ -24,6 +25,12 @@ export class FavoriteComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly productsSvc = inject(ProductsService);
   private readonly seo = inject(SeoService);
+  private readonly translate = inject(TranslateService);
+
+  readonly isGeorgian = toSignal(
+    this.translate.currentLanguage$.pipe(map((l) => l === 'ka')),
+    { initialValue: true },
+  );
 
   private readonly id = toSignal(
     this.route.paramMap.pipe(map((p) => Number(p.get('id')))),
