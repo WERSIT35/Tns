@@ -30,11 +30,10 @@
             <div class="card__body">
               <p class="card__code">{{ item.code }}</p>
               <h3 class="card__title">{{ productTitle(item) }}</h3>
-              <ul class="card__specs" [attr.aria-label]="isGeorgian() ? 'მახასიათებლები' : 'Specifications'">
-                <li>{{ item.volt }}V · {{ item.watt }}W</li>
-                <li>{{ item.length }}×{{ item.width }} {{ isGeorgian() ? 'მმ' : 'mm' }}</li>
-                <li>Ø {{ item.diameter }} {{ isGeorgian() ? 'მმ' : 'mm' }}</li>
-              </ul>
+              <dl class="card__specs">
+                <div><dt>{{ isGeorgian() ? 'ძაბვა · სიმძლავრე' : 'Rating' }}</dt><dd>{{ item.volt }} V · {{ item.watt }} W</dd></div>
+                <div><dt>{{ isGeorgian() ? 'ზომა' : 'Size' }}</dt><dd>{{ item.length }}×{{ item.width }} · Ø{{ item.diameter }} {{ isGeorgian() ? 'მმ' : 'mm' }}</dd></div>
+              </dl>
               <span class="card__cta">{{ isGeorgian() ? 'დეტალები' : 'Details' }} →</span>
             </div>
           </a>
