@@ -2,13 +2,18 @@
 
 @font-face {
   font-family: 'ALK Sanet';
-  src: url('/assets/alk-sanet-master/alk-sanet-master/fonts/alk-sanet-webfont.eot');
   src:
-    url('/assets/alk-sanet-master/alk-sanet-master/fonts/alk-sanet-webfont.eot?#iefix') format('embedded-opentype'),
     url('/assets/alk-sanet-master/alk-sanet-master/fonts/alk-sanet-webfont.woff2') format('woff2'),
-    url('/assets/alk-sanet-master/alk-sanet-master/fonts/alk-sanet-webfont.woff') format('woff'),
-    url('/assets/alk-sanet-master/alk-sanet-master/fonts/alk-sanet-webfont.ttf') format('truetype'),
-    url('/assets/alk-sanet-master/alk-sanet-master/fonts/alk-sanet-webfont.svg#alk_sanetregular') format('svg');
+    url('/assets/alk-sanet-master/alk-sanet-master/fonts/alk-sanet-webfont.woff') format('woff');
+  font-display: swap;
+}
+
+// Self-hosted variable font (one 30 KB file covers 400–800): no third-party CSS request.
+@font-face {
+  font-family: 'Reddit Mono';
+  src: url('/assets/fonts/reddit-mono-latin-wght.woff2') format('woff2');
+  font-weight: 200 900;
+  font-style: normal;
   font-display: swap;
 }
 
