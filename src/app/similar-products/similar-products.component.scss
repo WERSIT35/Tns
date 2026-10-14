@@ -25,7 +25,7 @@
   height: 44px;
   border-radius: var(--radius-pill);
   background: var(--color-brand-tint);
-  color: var(--color-brand);
+  color: var(--color-brand-ink);
   flex-shrink: 0;
 }
 
@@ -95,7 +95,7 @@
   &__code {
     font-size: var(--fs-xs);
     font-weight: 800;
-    color: var(--color-brand);
+    color: var(--color-brand-ink);
     letter-spacing: 1.2px;
     text-transform: uppercase;
   }
@@ -139,8 +139,8 @@
       }
 
       &:hover:not(:disabled) {
-        background: var(--color-brand);
-        border-color: var(--color-brand);
+        background: var(--color-brand-ink);
+        border-color: var(--color-brand-ink);
         transform: translateY(-50%) scale(1.05);
         svg {
           fill: var(--color-white);

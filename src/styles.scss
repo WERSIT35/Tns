@@ -19,6 +19,9 @@
 
 :root {
   --color-brand: #e0582e;
+  // Same heat orange, deep enough to carry text: white on it and it on paper both pass 4.5:1.
+  // --color-brand stays for glows, rules and icons; text and filled buttons use -ink.
+  --color-brand-ink: #c2441c;
   --color-brand-dark: #b43008;
   --color-brand-soft: #f3c9bc;
   --color-brand-tint: #fff4ee;
