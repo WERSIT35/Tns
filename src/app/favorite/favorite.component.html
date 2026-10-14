@@ -9,8 +9,9 @@
       </div>
       <div class="pd__body">
         <p class="pd__crumbs"><a routerLink="/">Home</a> <span aria-hidden="true">/</span> <span>{{ p.category }}</span></p>
-        <h1 class="pd__title">{{ p.name }}</h1>
+        <h1 class="pd__title">{{ p.name || p.code }}</h1>
         <p class="pd__code">Code: <strong>{{ p.code }}</strong></p>
+        @if (p.specsKnown !== false) {
         <p class="pd__desc">{{ descriptionText() }}</p>
 
         <dl class="specs">
@@ -20,6 +21,7 @@
           <div class="specs__row"><dt>Width</dt><dd>{{ p.width }} mm</dd></div>
           <div class="specs__row"><dt>Diameter</dt><dd>Ø {{ p.diameter }} mm</dd></div>
         </dl>
+        }
 
         <div class="pd__actions">
           <a class="btn btn--primary" href="tel:+995593268984"><span aria-hidden="true">☎</span> Order</a>

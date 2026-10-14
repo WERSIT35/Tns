@@ -15,6 +15,10 @@ export interface Product {
 
 export interface DisplayProduct extends Product {
   imageWebp: string;
+  /** Featured entries only: the matching catalog product, when one exists. */
+  catalogId?: number;
+  /** False for featured placeholders whose specs were never filled in (TODO(oto)). */
+  specsKnown?: boolean;
 }
 
 export const CATEGORIES = [
