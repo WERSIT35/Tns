@@ -75,8 +75,9 @@
       </ul>
     </div>
 
-    <aside
+    <div
       class="hero__categories"
+      role="group"
       [attr.aria-label]="isGeorgian() ? 'პოპულარული კატეგორიები' : 'Popular categories'"
     >
       <p class="cat-label">
@@ -98,7 +99,7 @@
           </li>
         }
       </ul>
-    </aside>
+    </div>
   </div>
 
   <ul class="hero__stats" [attr.aria-label]="isGeorgian() ? 'სტატისტიკა' : 'Quick stats'">

@@ -5,7 +5,9 @@
     <p class="eyebrow">{{ isGeorgian() ? 'პოპულარული' : 'Featured' }}</p>
     <h2 id="featured-title">{{ isGeorgian() ? 'პოპულარული ტენები' : 'Popular heating elements' }}</h2>
   </div>
-  <app-pop-slider />
+  @defer (hydrate on viewport) {
+    <app-pop-slider />
+  }
 </section>
 
 <section class="section" aria-labelledby="catalog-title">
@@ -13,5 +15,7 @@
     <p class="eyebrow">{{ isGeorgian() ? 'კატალოგი' : 'Catalog' }}</p>
     <h2 id="catalog-title">{{ isGeorgian() ? 'ყველა ტენი' : 'All products' }}</h2>
   </div>
-  <app-products />
+  @defer (hydrate on viewport) {
+    <app-products />
+  }
 </section>

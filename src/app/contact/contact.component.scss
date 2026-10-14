@@ -12,7 +12,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: var(--fs-xs);
-    color: var(--color-brand);
+    color: var(--color-brand-ink);
     font-weight: 700;
     margin-bottom: var(--space-2);
   }
@@ -51,14 +51,14 @@
     border: 1px solid var(--color-line);
     border-radius: var(--radius-lg);
     transition: border-color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
-    &:hover { border-color: var(--color-brand); transform: translateY(-2px); }
+    &:hover { border-color: var(--color-brand-ink); transform: translateY(-2px); }
   }
   &__icon {
     width: 44px;
     height: 44px;
     border-radius: var(--radius-pill);
     background: var(--color-brand-tint);
-    color: var(--color-brand);
+    color: var(--color-brand-ink);
     display: inline-grid;
     place-items: center;
     font-size: 18px;
@@ -96,7 +96,7 @@
     background: var(--color-surface-2);
     color: var(--color-ink);
     transition: border-color var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
-    &:focus { background: var(--color-white); border-color: var(--color-brand); outline: none; }
+    &:focus { background: var(--color-white); border-color: var(--color-brand-ink); outline: none; }
   }
   textarea { resize: vertical; min-height: 120px; }
 }
@@ -111,7 +111,7 @@
   width: max-content;
 
   &--primary {
-    background: var(--color-brand);
+    background: var(--color-brand-ink);
     color: var(--color-white);
     box-shadow: var(--shadow-1);
     &:hover { background: var(--color-brand-dark); }

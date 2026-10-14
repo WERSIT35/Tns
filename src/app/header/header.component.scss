@@ -43,7 +43,7 @@
     color: var(--color-brand-soft);
   }
   .i {
-    color: var(--color-brand);
+    color: var(--color-brand-ink);
     flex-shrink: 0;
   }
 }
@@ -65,7 +65,7 @@
       transform var(--t-fast) var(--ease);
     &:hover {
       color: var(--color-white);
-      background: var(--color-brand);
+      background: var(--color-brand-ink);
       transform: translateY(-1px);
     }
   }
@@ -172,16 +172,16 @@
       right: 0;
       bottom: 0;
       height: 2px;
-      background: var(--color-brand);
+      background: var(--color-brand-ink);
       transform: scaleX(0);
       transform-origin: center;
       transition: transform var(--t-base) var(--ease);
     }
     &:hover {
-      color: var(--color-brand);
+      color: var(--color-brand-ink);
     }
     &.is-active {
-      color: var(--color-brand);
+      color: var(--color-brand-ink);
       &::after {
         transform: scaleX(1);
       }
@@ -203,8 +203,8 @@
 
   &:hover {
     background: var(--color-brand-tint);
-    border-color: var(--color-brand);
-    color: var(--color-brand);
+    border-color: var(--color-brand-ink);
+    color: var(--color-brand-ink);
   }
 }
 
@@ -212,7 +212,7 @@
   display: inline-flex;
   align-items: center;
   padding: 11px 22px;
-  background: var(--color-brand);
+  background: var(--color-brand-ink);
   color: var(--color-white) !important;
   border-radius: var(--radius-pill);
   font-weight: 700;

@@ -129,7 +129,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--color-brand);
+    background: var(--color-brand-ink);
     box-shadow: 0 0 0 4px rgba(224, 88, 46, 0.25);
     animation: pulse-dot 2.4s ease-in-out infinite;
   }
@@ -188,7 +188,7 @@
   svg { flex-shrink: 0; }
 
   &--primary {
-    background: var(--color-brand);
+    background: var(--color-brand-ink);
     color: var(--color-white);
     box-shadow: 0 10px 30px rgba(224, 88, 46, 0.4);
     &:hover {
@@ -278,7 +278,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--color-brand);
+    background: var(--color-brand-ink);
     animation: pulse-dot 2.4s ease-in-out infinite;
   }
 }

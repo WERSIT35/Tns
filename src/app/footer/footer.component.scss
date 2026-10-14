@@ -46,7 +46,7 @@
     align-items: center;
     gap: 8px;
     transition: color var(--t-fast) var(--ease);
-    &:hover { color: var(--color-brand); }
+    &:hover { color: var(--color-brand-ink); }
   }
 }
 
@@ -84,7 +84,7 @@
     align-items: center;
     justify-content: center;
     transition: background var(--t-fast) var(--ease), transform var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
-    &:hover { background: var(--color-brand); color: var(--color-white); transform: translateY(-2px); }
+    &:hover { background: var(--color-brand-ink); color: var(--color-white); transform: translateY(-2px); }
   }
 }
 
