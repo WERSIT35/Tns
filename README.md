@@ -1,27 +1,42 @@
-# Tenebi
+# Tenebi — heating-element product catalog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+A bilingual (Georgian / English) product catalog I built for a Georgian supplier of industrial heating elements. Customers browse parts by category, check their specs, save favourites and order through WhatsApp.
 
-## Development server
+**🌐 Live:** [tns-khaki.vercel.app](https://tns-khaki.vercel.app/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Highlights
 
-## Code scaffolding
+- **Mobile Lighthouse went from 73 to 91** after the switch to **zoneless change detection** (no zone.js) and **incremental hydration** for the slider and the catalog. Total blocking time dropped from 517 ms to 237 ms.
+- **Upgraded step by step from Angular 17 to 20:** the new control flow, lazy routes, `DOCUMENT` moved to `@angular/core` and `moduleResolution: bundler`. Components were rewritten with signals and OnPush.
+- **Full i18n:** a custom translate service covers spec labels, units, breadcrumbs and similar products, and the page `lang` follows the selected language
+- **SEO:** each route has its own meta tags and **JSON-LD** product data, plus a sitemap and robots.txt, and the site is verified in Google Search Console
+- **Lighter pages:** fonts are self-hosted (one variable woff2, no Google Fonts request) and the Font Awesome CDN is gone. On phones the home page went from 14,067 px to 6,622 px tall.
+- **Accessibility:** the brand colour got a text-safe variant (5.1:1 contrast on white), landmarks are correct, and reduced motion is respected
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Stack
 
-## Build
+Angular 20 · SSR (`@angular/ssr`) · TypeScript · SCSS with design tokens · Vercel
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Run locally
 
-## Running unit tests
+```bash
+npm install
+npm start                # http://localhost:4200
+npm run build
+npm run serve:ssr:Tenebi
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Structure
 
-## Running end-to-end tests
+```
+src/app/
+  home, products, product-dt, similar-products, favorite, contact   feature components
+  products.service.ts   catalog data access
+  translate.service.ts  KA/EN translations
+  seo.service.ts        per-route meta + JSON-LD
+  data/                 catalog data
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Note
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Client project, shared as a portfolio sample. All rights reserved by the client and the author.
